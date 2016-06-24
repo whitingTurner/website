@@ -1,0 +1,4 @@
+Server listening on port undefined
+connected to database
+[ RowDataPacket { email: 'j', password: 'j' } ]
+Im logging out 

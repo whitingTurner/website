@@ -1,0 +1,9 @@
+Server listening on port undefined
+connected to database
+[ RowDataPacket { email: 'j', password: 'j' } ]
+select email, password from user_login where email ="j" and password = "j "
+[ RowDataPacket { email: 'j', password: 'j' } ]
+im in if
+[ RowDataPacket { email: 'j', password: 'j' } ]
+success sent
+j
