@@ -55,7 +55,7 @@ app.post( '/logout',function(req,res){
 });
 
 //function to insert uploaded model into lmvmodeloption
-app.post(  '/endpoint',function(req,res){
+app.post('/endpoint',function(req,res){
     var user_name=req.body.user1;
     var password=req.body.password;
     //var d={ux:user_name,dx:password};

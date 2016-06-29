@@ -1,6 +1,6 @@
 var urn_x='';
 var file_name_x='';
-    
+var flag=0;
 /*function insert_db1(){
     alert(urn_x);
     alert(file_name_x);
@@ -63,27 +63,28 @@ $('#w_login').click(function(event){
     })
 })
 function insert_db(){
-//alert('im in insert DB')
 
-       if(urn_x!='' && file_name_x!=''){
-           var user,pass;
-           user=urn_x;
-           pass=file_name_x;
-           $.post("/endpoint",{user1: user,password: pass}, function(data){
-               if(data==='yes')
-               {
+//alert("flag="+flag);
+       if(flag==1) {
+           //alert('your model is being uploaded')
+           var user, pass;
+           user = urn_x;
+           pass = file_name_x;
+           $.post("/endpoint", {user1: user, password: pass}, function (data) {
+               if (data === 'yes') {
                    alert("Model Uploaded");
                }
            });
+
+
        }
-
-
-
+    flag=0;
 }
 
 
 jQuery(document).ready(function($) {
 
+    
     var viewDataClient = new Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient(
                   'https://developer.api.autodesk.com',
                   'http://' + window.location.host + '/api/rawtoken');
@@ -280,6 +281,7 @@ jQuery(document).ready(function($) {
                                 alert(response.file.name);
                                 urn_x=viewable.urn;
                                 file_name_x=response.file.name;
+                                flag=1;
                                 //insert_db(viewable.urn,response.file.name);
                             });
                     }

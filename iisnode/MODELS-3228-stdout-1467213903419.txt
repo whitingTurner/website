@@ -1,0 +1,5 @@
+Server listening on port undefined
+connected to database
+[ RowDataPacket { email: 'j', password: 'j' } ]
+User name = dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6d3Rfd2hpdGluZ3R1cm5lci84NjE5MDRfNTAxal9hcmNoX2FsbF9zdG4ucnZ0, password is 861904_501j_arch_all_stn.rvt
+INSERT INTO lmvmodeloption(label,urn) VALUES("861904_501j_arch_all_stn.rvt","dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6d3Rfd2hpdGluZ3R1cm5lci84NjE5MDRfNTAxal9hcmNoX2FsbF9zdG4ucnZ0")

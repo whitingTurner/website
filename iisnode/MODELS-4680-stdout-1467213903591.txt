@@ -1,4 +1,5 @@
 Server listening on port undefined
 connected to database
 [ RowDataPacket { email: 'j', password: 'j' } ]
-Im logging out 
+User name = , password is 
+INSERT INTO lmvmodeloption(label,urn) VALUES("","")

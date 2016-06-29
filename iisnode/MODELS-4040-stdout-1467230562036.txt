@@ -1,0 +1,5 @@
+Server listening on port undefined
+connected to database
+[ RowDataPacket { email: 'j', password: 'j' } ]
+User name = dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6d3Rfd2hpdGluZ3R1cm5lci9UMjc3Ml9TYW4lMjBSYWZhZWxfQ0FfRWxlY18yMDEyTUIucnZ0, password is T2772_San Rafael_CA_Elec_2012MB.rvt
+INSERT INTO lmvmodeloption(label,urn) VALUES("T2772_San Rafael_CA_Elec_2012MB.rvt","dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6d3Rfd2hpdGluZ3R1cm5lci9UMjc3Ml9TYW4lMjBSYWZhZWxfQ0FfRWxlY18yMDEyTUIucnZ0")
