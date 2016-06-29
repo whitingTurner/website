@@ -84,7 +84,7 @@ function insert_db(){
 
 jQuery(document).ready(function($) {
 
-    
+
     var viewDataClient = new Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient(
                   'https://developer.api.autodesk.com',
                   'http://' + window.location.host + '/api/rawtoken');
@@ -277,8 +277,8 @@ jQuery(document).ready(function($) {
                                 //var fileId = viewDataClient.fromBase64(
                                 //    viewable.urn);
                                 addToCombo(viewable.urn, response.file.name);
-                                alert(viewable.urn);
-                                alert(response.file.name);
+                               // alert(viewable.urn);
+                               // alert(response.file.name);
                                 urn_x=viewable.urn;
                                 file_name_x=response.file.name;
                                 flag=1;

@@ -1,36 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd874ef9-78ba-46da-89cf-ffd8264cfa90" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-1152-stdout-1467065450677.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-1420-stdout-1467057680330.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-156-stdout-1467057680659.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-1720-stdout-1467065450677.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-1812-stdout-1467050658656.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-1956-stdout-1467050658737.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-2040-stdout-1467065450834.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-2664-stdout-1467065450833.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-2816-stdout-1467050658696.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-2984-stdout-1467050658865.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-2992-stdout-1467050658835.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-3236-stdout-1467050658797.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-3304-stdout-1467065450505.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-3560-stdout-1467057680502.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-3632-stdout-1467065450335.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-3692-stdout-1467057680549.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-3716-stdout-1466809130813.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-3836-stdout-1467065450506.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-4120-stdout-1467057680845.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-4468-stdout-1467057680721.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-4948-stdout-1467057680300.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-4960-stdout-1467057680829.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-5052-stdout-1467065450334.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-848-stdout-1467050658691.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/iisnode/MODELS-916-stdout-1467050658751.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iisnode/index.html" afterPath="$PROJECT_DIR$/iisnode/index.html" />
+    <list default="true" id="cd874ef9-78ba-46da-89cf-ffd8264cfa90" name="Default" comment="almost updated website">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/iisnode/MODELS-3584-stdout-1467230562407.txt" afterPath="$PROJECT_DIR$/iisnode/MODELS-3584-stdout-1467230562407.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/main.js" afterPath="$PROJECT_DIR$/public/scripts/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="updated_lmv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,8 +71,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/scripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="86" column="4" selection-start-line="86" selection-start-column="4" selection-end-line="86" selection-end-column="4" />
+            <state relative-caret-position="260">
+              <caret line="280" column="33" selection-start-line="280" selection-start-column="33" selection-end-line="280" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -371,12 +344,12 @@
       <workItem from="1466630062315" duration="4208000" />
       <workItem from="1466700369449" duration="3667000" />
       <workItem from="1466808830105" duration="1137000" />
-      <workItem from="1467215554790" duration="6714000" />
+      <workItem from="1467215554790" duration="7400000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38815000" />
+    <option name="totallyTimeSpent" value="39501000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1372" height="732" extended-state="0" />
@@ -410,6 +383,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="almost updated website" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost updated website" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -725,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="86" column="4" selection-start-line="86" selection-start-column="4" selection-end-line="86" selection-end-column="4" />
+        <state relative-caret-position="260">
+          <caret line="280" column="33" selection-start-line="280" selection-start-column="33" selection-end-line="280" selection-end-column="33" />
           <folding />
         </state>
       </provider>
