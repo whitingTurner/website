@@ -67,8 +67,8 @@
                     <h3 class="panel-title">Whiting Turner 3D view Application</h3>
                 </div>
                 <div class="panel-body">
-
-                    <legend>Upload the model(revit,autocad)</legend>
+                    <a href="#myModal" data-toggle="modal" data-target="#myModal">List of supported models</a>
+                    <legend>Upload the model</legend>
 
                     <div class="form-group">
                         <a class="btn btn-warning" id='btnUploadModel' data-toggle="modal" href='#modal-uploadModel'>Upload model</a>
@@ -164,6 +164,25 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Supported Models</h4>
+            </div>
+            <div class="modal-body" style="font-size: medium; font-weight: bold">
+
+                3ds, 3dm, asm, asm\.\d+$, cam360,catpart, catproduct, cgr, collaboration, dae, dgn, dlv3, dwf,
+                dwfx, dwg, dwt, dxf, exp, f3d, fbx, g, gbxml, iam, idw, ifc, ifw, ige, iges, igs, ipt, jt,
+                max, mfr, model, neu, neu\.\d+$, nwc, nwd, obj, pdf, prt, prt\.\d+$, rcp, rvt,
+                sab, sat, session, skp,  sldasm, sldprt, smb, smt, ste
+                step, stl, stla, stlb, stp,  x_b, x_t, xas, xpr, wire, zip
+            </div>
+        </div>
+    </div>
+</div>
 <!-- jQuery -->
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <!-- Bootstrap JavaScript -->

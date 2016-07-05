@@ -7,7 +7,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app = express();
 
-
+app.use(session({
+    secret:'Apple_whiting_turner',
+    resave: true,
+    saveUninitialized: true
+}));
 
 //app.use is to define the pages and folder and basic usage
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,7 +37,7 @@ var connection = mysql.createConnection({
 });
 
 //Get Function to check
-app.get( '/data', function(req, res){
+app.get('/data', function(req, res){
     res.send('hello world'); //replace with your data here
 });
 
@@ -50,7 +54,7 @@ app.get( '/lmvmodels',function(req,res){
 //Logout function
 app.post( '/logout',function(req,res){
     console.log('Im logging out ');
-    req.session = null;
+    req.session.destroy();
     res.send("logout");
 });
 
@@ -58,36 +62,36 @@ app.post( '/logout',function(req,res){
 app.post('/endpoint',function(req,res){
     var user_name=req.body.user1;
     var password=req.body.password;
-    //var d={ux:user_name,dx:password};
+
     console.log("User name = "+user_name+", password is "+password);
-    var s='INSERT INTO lmvmodeloption(label,urn) '+
-    'VALUES("'+password+'","'+user_name+'")';
-    console.log(s);
-    connection.query(s,function(err,res){
+    var post = {label:password, urn:user_name};
+
+
+   // var s='INSERT INTO lmvmodeloption(label,urn) '+
+  //  'VALUES("'+password+'","'+user_name+'")';
+  //  console.log(s);
+    var query9=connection.query('INSERT into lmvmodeloption SET ?',post,function(err,res){
         if(err)
-            throw err;
+            console.log(err);
     });
+    console.log(query9.sql);
     res.end("yes");
 });
-app.use(cookieParser())
-//app.use(session({secret: 'Keyboard car'}));
-//this function takes care of the login, check if it returns the rows, if yes send success message, login success
+app.use(cookieParser());
 app.post('/login',function(req,res){
     var p_wt=req.body.pass_w;
     var u_wt=req.body.user_w; var sess;
-    //console.log(p_wt);
-    //console.log(u_wt);
-    var q= 'select email, password from user_login where email ="' +u_wt+ '" and password = "' +p_wt+ ' "';
+
+    var q='Select email,password from user_login where email =? and password = ?';
+    var p={x:u_wt,y:p_wt};
     console.log(q);
-    connection.query(q,function(err,rows,fields){
+    connection.query(q,[u_wt,p_wt],function(err,rows,fields){
         //console.log(rows[0].email);
         console.log(rows);
         if(!err)
         {
             console.log('im in if');
-            //sess=req.session;
-            //sess.email_u=rows[0].email;
-            //console.log("Session="+ sess.email_u);
+            req.session.user_wt=u_wt;
             console.log(rows);
             console.log("success sent");
             console.log(rows[0].email);
@@ -125,18 +129,12 @@ var server = app.listen(app.get('port'), function() {
             console.log(rows);
         }
     });
-   /* connection.query('SELECT email as first from user_login where email="jeevjyot.chhabda@whiting-turne"', function(err, rows, fields) {
-        if (!err)
-            console.log(rows);
-        else
-            console.log('Error while performing Query., Empty it is, no rows'+ err.stack);
-    });*/
     console.log('Server listening on port ' +
         server.address().port);
 });
 
-//this function checks if no session is set, redirect the user to the index page
-function checkAuth(req,res,nect){
+
+function checkAuth_u(req,res,nect){
     if(!sess.email_u){
         res.redirect("/");
     }

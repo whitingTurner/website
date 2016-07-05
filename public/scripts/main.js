@@ -64,9 +64,9 @@ $('#w_login').click(function(event){
 })
 function insert_db(){
 
-//alert("flag="+flag);
+console.log("flag="+ flag)
        if(flag==1) {
-           //alert('your model is being uploaded')
+           alert('New Model Added')
            var user, pass;
            user = urn_x;
            pass = file_name_x;
