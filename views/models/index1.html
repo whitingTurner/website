@@ -47,7 +47,21 @@
 
     <script src="../../public/scripts/MyAuthToken.js"></script>
     <script>var debugging = true;</script>
+    <script type="text/javascript">
+        function check(){
 
+            $.get( "/check", function( data ){
+                //alert(data);
+                if(data=='null')
+                {
+                    window.location="/";
+                }
+
+            });
+        }
+
+        window.onload=check();
+    </script>
 
 </head>
 

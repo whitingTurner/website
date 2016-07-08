@@ -1,1 +1,1 @@
-Error: ER_BAD_FIELD_ERROR: Unknown column 'l' in 'field list'
+TypeError: Cannot set property 'user_wt' of undefined

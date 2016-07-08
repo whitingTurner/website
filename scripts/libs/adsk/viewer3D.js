@@ -18064,7 +18064,7 @@ Autodesk.Viewing.Private.SvfLoader.prototype.pathToURL = function(path) {
     }
     
     var rootRelPath = window.location.pathname;
-    //chop off the index.html part
+    //chop off the index.ejs part
     var lastSlash = rootRelPath.lastIndexOf("/");
     rootRelPath = rootRelPath.substr(0, lastSlash+1);
     var absPath = window.location.protocol + "//" + window.location.host + rootRelPath + path;
@@ -30241,7 +30241,7 @@ Autodesk.Viewing.Private.MaterialManager = function (viewer)
         }
 
         var rootRelPath = window.location.pathname;
-        //chop off the index.html part
+        //chop off the index.ejs part
         var lastSlash = rootRelPath.lastIndexOf("/");
         rootRelPath = rootRelPath.substr(0, lastSlash+1);
         var absPath = window.location.protocol + "//" + window.location.host + rootRelPath + path;

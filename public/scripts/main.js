@@ -26,15 +26,13 @@ urn_x='hello';file_name_x='jj';
 $('#out_log').click(function(event){
     event.preventDefault();
     confirm("Are you Sure, you want to Log out?");
-    $.post("/logout",{}, function (data) {
-        //  alert(data);
-        if(data == "logout")
+    $.get( "/logout", function( data ){
+        if(data=='log_out')
         {
-            console.log('im out');
-            window.location="/"
+            window.location="/";
         }
 
-    })
+    });
 });
 //for handling the carousel function in the bootstrap
 $("#carousel").carousel();
@@ -57,10 +55,11 @@ $('#w_login').click(function(event){
        }
 
         else{
+         //  alert(data);
            alert('Invalids details, Either Email or Password is incorrect');
            window.location="/"
        }
-    })
+    });
 })
 function insert_db(){
 

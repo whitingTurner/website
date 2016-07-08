@@ -32,11 +32,27 @@
 
     <!-- File drop javascript -->
     <link rel="stylesheet" type="text/css" href="../../public/styles/filedrop.css">
+    <script type="text/javascript">
 
+
+          function check(){
+
+              $.get( "/check", function( data ){
+                  //alert(data);
+                  if(data=='null')
+                  {
+                      window.location="/";
+                  }
+
+              });
+          }
+
+      window.onload=check();
+    </script>
 
 
 </head>
-<body onload="">
+<body onload="check();">
 <!-- navigation bar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
