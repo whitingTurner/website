@@ -86,15 +86,13 @@ function loadModelMenuOptions() {
 $('#out_out').click(function(event){
     event.preventDefault();
     confirm("Are you Sure, you want to Log out?");
-    $.post("/logout",{}, function (data) {
-        //  alert(data);
-        if(data == "logout")
+    $.get( "/logout", function( data ){
+        if(data=='log_out')
         {
-            console.log('im out');
             window.location="/";
         }
 
-    })
+    });
 });
 
 //fullscreen button

@@ -28,13 +28,21 @@
 
 	<!-- carousel CSS -->
 	<link rel="stylesheet" src="../../public/styles/carousel.css">
+	<style>
+		.Absolute-Center{
+			width: 50%;
+			height: 50%;
+			overflow: auto;
+			margin: auto;
+			position:absolute;
+			top:0; left: 0; bottom: 0; right: 0;
+		}
+		.Center-Container{
+			position: relative;
+		}
 
 
-
-
-
-
-
+	</style>
 
 </head>
 <body>
@@ -59,48 +67,15 @@
 		</div>
 	</div>
 </nav>
-<div class="container-fluid" style=" margin-top: 100px;margin-right: 100px;margin-left: 100px;" >
-	<div id="carousel" class="carousel slide" data-ride="carousel" style="width: 730px; margin: 0 auto">
-		<!-- Menu -->
-		<ol class="carousel-indicators">
-			<li data-target="#carousel" data-slide-to="0" class="active"></li>
-			<li data-target="#carousel" data-slide-to="1"></li>
-			<li data-target="#carousel" data-slide-to="2"></li>
-		</ol>
+<div class="container-fluid text-center pagination-centered " style="margin-top: 20%"  >
 
-		<!-- Items -->
-		<div class="carousel-inner">
-
-			<div class="item active">
-				<img src="../../public/images/image5.jpg" alt="Slide 1" />
-			</div>
-			<div class="item">
-				<img src="../../public/images/image3.jpg" alt="Slide 2" />
-			</div>
-			<div class="item">
-				<img src="../../public/images/image4.jpg" alt="Slide 3" />
-			</div>
-		</div>
-		<a href="#carousel" class="left carousel-control" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-		</a>
-		<a href="#carousel" class="right carousel-control" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right"></span>
-		</a>
-	</div>
-
-
-	<p class="lead" style="margin-left: 150px; margin-right: 200px">The mission of Whiting-Turner is to build on our reputation for integrity, excellence, experience and leadership as the nation’s finest construction organization by:
-	<li class="lead" style="margin-left: 150px; margin-right: 200px"> Continuously improving the quality of our work and services.</li>
-	<li class="lead" style="margin-left: 150px; margin-right: 200px">Constantly striving to exceed each client's expectations.</li>
-	<li class="lead" style="margin-left: 150px; margin-right: 200px"> Maintaining our dedication to the highest moral principles.</li>
-	<li class="lead" style="margin-left: 150px; margin-right: 200px"> Providing our people with a challenging, secure and safe environment in which to achieve personal career goals</li>
-	</p>
+	<h1 class="display-1">Whiting-Turner Model Viewer</h1>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal">Log in</button>
 
 
 </div><!-- /.container -->
 
-<div class="navbar navbar-default navbar-fixed-bottom">
+<div class="navbar navbar-default navbar-fixed-bottom ">
 	<div class="container">
 		<p class="navbar-text pull-left">© 2016 - Whiting-turner
 

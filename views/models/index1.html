@@ -62,6 +62,38 @@
 
         window.onload=check();
     </script>
+    <script type="text/javascript">
+        var idleTime = 0;
+        $(document).ready(function () {
+            //Increment the idle time counter every minute.
+            console.log('i will detect inactivity timeout');
+            var idleInterval = setInterval(timerIncrement, 60000); // 1 minute
+
+            //Zero the idle timer on mouse movement.
+            $(this).mousemove(function (e) {
+                idleTime = 0;
+                console.log('mouse moved');
+            });
+            $(this).keypress(function (e) {
+                idleTime = 0;
+                console.log('key pressed');
+            });
+        });
+
+        function timerIncrement() {
+            idleTime = idleTime + 1;
+            if (idleTime > 1) { // 20 minutes
+                $.get( "/logout", function( data ){
+                    if(data=='log_out')
+                    {
+                        alert('Inactivity Detected, Please login again');
+                        window.location="/";
+                    }
+
+                });
+            }
+        }
+    </script>
 
 </head>
 

@@ -23,7 +23,7 @@ urn_x='hello';file_name_x='jj';
     });
 };
 */
-$('#out_log').click(function(event){
+$('#out_out').click(function(event){
     event.preventDefault();
     confirm("Are you Sure, you want to Log out?");
     $.get( "/logout", function( data ){
