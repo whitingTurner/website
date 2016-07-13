@@ -40,6 +40,10 @@
                   if(data=='null')
                   {
                       window.location="/";
+
+                  }
+                  else{
+
                   }
 
               });
@@ -66,16 +70,25 @@
 
         function timerIncrement() {
             idleTime = idleTime + 1;
-            if (idleTime > 1) { // 20 minutes
+            if (idleTime > 20) { // 20 minutes
                 $.get( "/logout", function( data ){
                     if(data=='log_out')
                     {
-                        alert('Inactivity Detetced, Please log in');
+                        alert('Inactivity Detected, Please log in');
                         window.location="/";
                     }
 
                 });
             }
+        }
+    </script>
+    <script>
+        window.onunload = function(){
+            $.get('/logout',function(data){
+                if(data=='log_out'){
+                    console.log('session deleted afer unloading');
+                }
+            })
         }
     </script>
 

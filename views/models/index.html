@@ -43,7 +43,35 @@
 
 
 	</style>
+	<script>
+		window.onunload = function(){
+			$.get('/logout',function(data){
+				if(data=='log_out'){
+					console.log('session deleted afer unloading');
+				}
+			})
+		}
+	</script>
 
+	<script type="text/javascript">
+		function check(){
+
+			$.get( "/check", function( data ){
+				//alert(data);
+				if(data == 'ns')
+				{
+					//$('#out_index').show();
+					$('#log_in').show();
+
+				}
+				else{
+					$('#out_index').hide();
+				}
+
+			});
+		}
+		window.onload=check();
+	</script>
 </head>
 <body>
 <!-- navigation bar -->
@@ -62,7 +90,7 @@
 				<li><a href="http://www.whiting-turner.com/contact/contact.html">Contact Us</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="pull-right"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+				<!--<li class="pull-right"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li> -->
 			</ul>
 		</div>
 	</div>
@@ -70,8 +98,9 @@
 <div class="container-fluid text-center pagination-centered " style="margin-top: 20%"  >
 
 	<h1 class="display-1">Whiting-Turner Model Viewer</h1>
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal">Log in</button>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="log_in">Log in</button><br /> <br />
 
+	<button type="button" class="btn btn-danger" id="out_index">Logout</button>
 
 </div><!-- /.container -->
 

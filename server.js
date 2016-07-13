@@ -11,8 +11,9 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('cookie-session');
+var uuid=require('uuid');
 var app=express();
-
+var unique_id;
 app.use(bodyParser.urlencoded({ extended: false })); //for retrieving the data from the javascript file.
 
 // Cookie parsing needed for sessions
@@ -80,8 +81,24 @@ app.post('/endpoint',function(req,res){
     console.log(query9.sql);
     res.end("yes");
 });
+//function to logs the user out and update the login in status
+//if user is already logged in: logged_in : yes and uuid is set
+//if user is not logged in. logged_in : no and uuid is null
+function logout(req, res,u_wt) {
+    var user_name=req.session.user_wt;
+    console.log(user_name);
+    req.session = null;
+    console.log('Session deleted');
+    var NO='no'; var z='NULL';
+    //var query_delete="update user_login set logged_in = ? and uuid = ? where email = ?";
+    connection.query("update user_login set logged_in = ?,uuid = ? where email = ?",[NO,z,user_name],function(err){
+        if(err)
+        {
+            console.log(err);
+            console.log('Error deleting the entry')
+        }
 
-function logout(req, res) {
+    });
     req.session = null;
     res.send('log_out');
 }
@@ -95,43 +112,123 @@ function isUserLoggedIn(req,res){
     if(req.session.user_wt=="undefined" || !req.session.user_wt)
     {
         console.log('no session set');
-        res.send('null');
+        res.send('ns');
+    }
+    else{
+        res.send('s');
     }
 
 }
 
 //to check if the user is logged in
 app.get('/check',isUserLoggedIn);
+var x;
 
+
+//check whether user is logged in other system or not
+function update(u_wt,callback){
+    var flagY='no'
+    console.log('I am in update');
+    connection.query('select * from user_login where email= ? and logged_in= ?',[u_wt,flagY],function(err,rows){
+        if(!err){
+
+            if(rows.length>=1) {
+                x=1;
+                console.log(rows);
+                var query_up = 'Update user_login set logged_in=?,uuid=? where email=?';
+                var flagX = 'yes';
+                var u_id = uuid.v1();
+                connection.query(query_up, [flagX, u_id, u_wt], function (err) {
+                    if (err) {
+                        console.log(err);
+                        console.log('Error was thrown above me ');
+                    }
+                });
+            }
+            else{
+                console.log('im returning 0 value')
+                 x=0;
+            }
+        callback(x);
+        }
+        else{
+            console.log(err);
+        }
+
+    });
+};
 //endpoint for login and authentication
 app.post('/login',function(req,res){
     var p_wt=req.body.pass_w;
     var u_wt=req.body.user_w;
-    console.log(u_wt);
+    console.log('UserName=',u_wt);
+    console.log('Password=',p_wt);
+    console.log(bcrypt.hashSync(p_wt));
     var q='Select email,password from user_login where email =?;'
-    var p={x:u_wt,y:p_wt};
     connection.query(q,[u_wt],function(err,rows,fields){
-        //console.log(rows);
-        //if email is present in database
-        if(rows.length>=1)
-        {
-            //if the hash password and password entered by user matches
-            if(bcrypt.compareSync(p_wt,rows[0].password)){
-                //req.session.user_wt=u_wt;
-                console.log(rows);
-                req.session.user_wt = req.body.user_w;
-                console.log("success sent");
-                res.send("success")
-            }
-            else{
-                res.send("bad data");
-            }
 
-        }//if ends
+        //if email is present in database
+        if(!err){
+            if(rows.length>=1)
+            {
+                console.log('Fetched this details=',rows);
+                if(bcrypt.compareSync(p_wt,rows[0].password))
+                {
+                    console.log('hashed Password matched');
+                        update(u_wt,function(data){
+                           if(data==0){
+                               res.send('Already');
+                           }
+                            else{
+                               console.log('User is not logged in, lets log him now');
+                                req.session.user_wt=req.body.user_w;
+                               console.log("success sent");
+                               res.send("success");
+                           }
+
+                        });
+                    //req.session.user_wt=req.body.user_w;
+                    //res.send("success");
+
+                }//inner if ends
+                else
+                {
+                    console.log('Sending bad data');
+                    res.send('bad data');
+                }//inner else ends
+               /* update(u_wt,function(data){
+                    if(data==0)
+                    {
+                        res.send('already');
+                    }
+                    else
+                    {
+                        if(bcrypt.compareSync(p_wt,rows[0].password)){
+                            //req.session.user_wt=u_wt;
+                            console.log(rows);
+                            req.session.user_wt = req.body.user_w;
+                            console.log("success sent");
+                            res.send("success");
+
+                        }
+                        else{
+                            res.send("bad data");
+                        }
+                    }
+
+                });*/
+            }//if ends
+            else{
+                console.log("bad data");
+                res.send("bad data");
+            }//else ends
+        }
         else{
-            console.log("bad data");
-            res.send("bad data");
-        }//else ends
+            console.log(err);
+            res.send("Please");
+        }
+
+
     });
 
 });
@@ -139,6 +236,7 @@ app.post('/login',function(req,res){
 //for catching uncaught operation
 process.on('uncaughtException',function(err){
     fs.writeFileSync("test.txt",err,"utf8")
+    console.log(err);
 });
 
 //Starting the server

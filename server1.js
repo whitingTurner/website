@@ -150,6 +150,10 @@ var server = app.listen(app.get('port'), function() {
             return;
         }else{console.log('connected to database');}
     });
+    console.log("raymoriconi=",bcrypt.hashSync("raymoriconi"));
+    console.log("chadclark=",bcrypt.hashSync("chadclark"));
+    console.log("matthewbrady=",bcrypt.hashSync("matthewbrady"));
+    console.log("zohairlateef=",bcrypt.hashSync("zohairlateef"));
 
     //query Db to check the database
     /*connection.query("select email,password from user_login where email='j'",function(err,rows,fields){

@@ -29,14 +29,28 @@ $('#out_out').click(function(event){
     $.get( "/logout", function( data ){
         if(data=='log_out')
         {
+
             window.location="/";
         }
 
     });
 });
+
+//logout button on index page
+$('#out_index').click(function(event){
+    $.get("/logout",function(data){
+        if(data=='log_out')
+        {
+
+            window.location="/"
+        }
+
+    });
+
+});
 //for handling the carousel function in the bootstrap
 $("#carousel").carousel();
-
+$('#out_index').hide();
 $('#w_login').click(function(event){
     event.preventDefault();
    // alert('You wanna login?')
@@ -47,17 +61,28 @@ $('#w_login').click(function(event){
     //alert(user_name_wt);
     $.post("/login",{user_w: user_name_wt, pass_w: password_wt}, function (data) {
       //  alert(data);
-       // alert("im data"+data);
-       if(data == "success")
-       {
-               // alert("login success")
-               window.location="/admin.html"
-       }
 
-        else{
+       if(data == "success") {
+              // alert(data);
+               window.location="/admin.html"
+           $('#log_in').hide();
+           $('#out_index').show();
+       }
+        else if(data=='Already'){
+           //alert(data);
+           alert('You are already logged in other device or PC');
+           window.location='/';
+       }
+        else if(data=='bad data'){
+          // alert(data);
          //  alert(data);
            alert('Invalids details, Either Email or Password is incorrect');
-           window.location="/"
+           window.location="/";
+       }
+        else{
+          // alert(data);
+           alert('Please try again in sometime');
+           window.location="/";
        }
     });
 })

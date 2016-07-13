@@ -57,6 +57,7 @@
                     window.location="/";
                 }
 
+
             });
         }
 
@@ -82,7 +83,7 @@
 
         function timerIncrement() {
             idleTime = idleTime + 1;
-            if (idleTime > 1) { // 20 minutes
+            if (idleTime > 20) { // 20 minutes
                 $.get( "/logout", function( data ){
                     if(data=='log_out')
                     {
@@ -92,6 +93,16 @@
 
                 });
             }
+        }
+    </script>
+
+    <script>
+        window.onunload = function(){
+            $.get('/logout',function(data){
+                if(data=='log_out'){
+                    console.log('session deleted afer unloading');
+                }
+            })
         }
     </script>
 

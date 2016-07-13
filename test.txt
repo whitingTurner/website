@@ -1,1 +1,1 @@
-TypeError: Cannot set property 'user_wt' of undefined
+ReferenceError: c is not defined
