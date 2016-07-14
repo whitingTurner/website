@@ -84,11 +84,13 @@ app.post('/endpoint',function(req,res){
 //function to logs the user out and update the login in status
 //if user is already logged in: logged_in : yes and uuid is set
 //if user is not logged in. logged_in : no and uuid is null
-function logout(req, res,u_wt) {
+function logout1(req, res,u_wt) {
     var user_name=req.session.user_wt;
+    console.log('i am being called');
     console.log(user_name);
     req.session = null;
     console.log('Session deleted');
+    console.log('Firefox is killing me');
     var NO='no'; var z='NULL';
     //var query_delete="update user_login set logged_in = ? and uuid = ? where email = ?";
     connection.query("update user_login set logged_in = ?,uuid = ? where email = ?",[NO,z,user_name],function(err){
@@ -99,11 +101,12 @@ function logout(req, res,u_wt) {
         }
 
     });
-    req.session = null;
+    //req.session = null;
+    console.log('log_out sent');
     res.send('log_out');
 }
 //logout function
-app.get('/logout', logout);
+app.get('/logout1', logout1);
 
 //function to check whether is logged or not, Middleware function
 function isUserLoggedIn(req,res){
@@ -175,7 +178,7 @@ app.post('/login',function(req,res){
                 if(bcrypt.compareSync(p_wt,rows[0].password))
                 {
                     console.log('hashed Password matched');
-                        update(u_wt,function(data){
+                       /* update(u_wt,function(data){
                            if(data==0){
                                res.send('Already');
                            }
@@ -186,9 +189,11 @@ app.post('/login',function(req,res){
                                res.send("success");
                            }
 
-                        });
-                    //req.session.user_wt=req.body.user_w;
-                    //res.send("success");
+                        });*/
+
+                    req.session.user_wt=req.body.user_w;
+                    console.log('Success');
+                    res.send("success");
 
                 }//inner if ends
                 else

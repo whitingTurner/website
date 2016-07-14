@@ -57,20 +57,29 @@
 		function check(){
 
 			$.get( "/check", function( data ){
-				//alert(data);
+
 				if(data == 'ns')
 				{
 					//$('#out_index').show();
+
+					$('#uploadx').hide();
+					$('#modelsx').hide();
 					$('#log_in').show();
+					//alert('Session is not set');
 
 				}
 				else{
-					$('#out_index').hide();
+					//alert('session is set = ' + data);
+					//window.location ='/admin.html';
+					$('#uploadx').show();
+					$('#modelsx').show ();
+					$('#log_in').hide();
+					$('#out_index').show();
 				}
 
 			});
 		}
-		window.onload=check();
+		$(document).ready(check);
 	</script>
 </head>
 <body>
@@ -99,8 +108,10 @@
 
 	<h1 class="display-1">Whiting-Turner Model Viewer</h1>
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="log_in">Log in</button><br /> <br />
-
+	<span><a href="/admin.html" id="uploadx">Upload Model</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+	<span><a href="/index1.html" id="modelsx">View 3d Models</a></span><br /> <br />
 	<button type="button" class="btn btn-danger" id="out_index">Logout</button>
+
 
 </div><!-- /.container -->
 

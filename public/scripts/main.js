@@ -26,10 +26,10 @@ urn_x='hello';file_name_x='jj';
 $('#out_out').click(function(event){
     event.preventDefault();
     confirm("Are you Sure, you want to Log out?");
-    $.get( "/logout", function( data ){
+    $.get( "/logout1", function( data ){
         if(data=='log_out')
         {
-
+            //alert('hi this is main.js')
             window.location="/";
         }
 
@@ -38,10 +38,11 @@ $('#out_out').click(function(event){
 
 //logout button on index page
 $('#out_index').click(function(event){
-    $.get("/logout",function(data){
+    console.log('out indeex is being called randomly');
+    $.get("/logout1",function(data){
         if(data=='log_out')
         {
-
+            //alert('hi this is main.js')
             window.location="/"
         }
 
@@ -65,8 +66,6 @@ $('#w_login').click(function(event){
        if(data == "success") {
               // alert(data);
                window.location="/admin.html"
-           $('#log_in').hide();
-           $('#out_index').show();
        }
         else if(data=='Already'){
            //alert(data);

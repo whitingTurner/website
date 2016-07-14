@@ -23,33 +23,21 @@
     <!-- Autodesk.ADN.Toolkit.Viewer -->
     <script src=" https://rawgit.com/Developer-Autodesk/library-javascript-view.and.data.api/master/js/Autodesk.ADN.Toolkit.ViewData.js"></script>
 
-    <!-- jquery -->
-
-
-    <!-- Custon Java script -->
-    <!-- script src="upload.js"></script>
-
-
     <!-- File drop javascript -->
     <link rel="stylesheet" type="text/css" href="../../public/styles/filedrop.css">
     <script type="text/javascript">
-          function check(){
-
-              $.get( "/check", function( data ){
-                  //alert(data);
-                  if(data=='null')
-                  {
-                      window.location="/";
-
-                  }
-                  else{
-
-                  }
-
-              });
-          }
-      window.onload=check();
+        function check(){
+            $.get( "/check", function( data ){
+                //alert(data);
+                if(data=='ns')
+                {
+                    window.location="/";
+                }
+            });
+        }
+        $(document).ready(check);
     </script>
+
     <script type="text/javascript">
         var idleTime = 0;
         $(document).ready(function () {
@@ -71,7 +59,7 @@
         function timerIncrement() {
             idleTime = idleTime + 1;
             if (idleTime > 20) { // 20 minutes
-                $.get( "/logout", function( data ){
+                $.get( "/logout1", function( data ){
                     if(data=='log_out')
                     {
                         alert('Inactivity Detected, Please log in');
@@ -84,7 +72,8 @@
     </script>
     <script>
         window.onunload = function(){
-            $.get('/logout',function(data){
+            console.log('browser is about to close');
+            $.get('/logout1',function(data){
                 if(data=='log_out'){
                     console.log('session deleted afer unloading');
                 }
@@ -93,7 +82,7 @@
     </script>
 
 </head>
-<body onload="check();">
+<body>
 <!-- navigation bar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -110,7 +99,7 @@
                 <li><a href="http://www.whiting-turner.com/contact/contact.html">Contact Us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="pull-right"><a id="out_out" href="#" onclick="out_out();">Logout</a></li>
+                <li class="pull-right"><a id="out_out" href="#">Logout</a></li>
             </ul>
         </div>
     </div>

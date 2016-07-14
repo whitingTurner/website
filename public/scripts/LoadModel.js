@@ -86,7 +86,7 @@ function loadModelMenuOptions() {
 $('#out_out').click(function(event){
     event.preventDefault();
     confirm("Are you Sure, you want to Log out?");
-    $.get( "/logout", function( data ){
+    $.get( "/logout1", function( data ){
         if(data=='log_out')
         {
             window.location="/";
