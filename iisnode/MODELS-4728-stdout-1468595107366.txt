@@ -1,0 +1,23 @@
+Server listening on port undefined
+connected to database
+UserName= j
+Password= j
+$2a$10$/rIiA1S/0q0TBR.V/QIVluUhid1AnqqT0WeZIxQHgf6hehlQxP2XG
+Fetched this details= [ RowDataPacket {
+    email: 'j',
+    password: '$2a$10$m7thHGa4y6TayH94F9MjseN7cY4M4ZpHPPQ3TZ2.xpexKxrd9/p72' } ]
+hashed Password matched
+Success
+checking if user is logged in
+session=j
+checking if user is logged in
+session=undefined
+no session set
+checking if user is logged in
+session=j
+checking if user is logged in
+session=undefined
+no session set
+checking if user is logged in
+session=undefined
+no session set

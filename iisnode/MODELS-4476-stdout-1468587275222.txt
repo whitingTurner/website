@@ -1,0 +1,10 @@
+Server listening on port undefined
+connected to database
+i am being called
+ray.moriconi@whiting-turner.com
+Session deleted
+Firefox is killing me
+log_out sent
+checking if user is logged in
+session=undefined
+no session set

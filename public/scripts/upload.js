@@ -8,7 +8,7 @@ var oViewDataClient =null ;
 $(document).ready (function () {
     oViewDataClient =new Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient (
         'https://developer.api.autodesk.com',
-        'http://' + window.location.host + '/api/token'
+        'https://whiting-turner-auth.herokuapp.com/auth'
     ) ;
 
     $('#btnTranslateThisOne').click (function (evt) {

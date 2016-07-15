@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
 
     var viewDataClient = new Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient(
                   'https://developer.api.autodesk.com',
-                  'http://' + window.location.host + '/api/rawtoken');
+                  'https://whiting-turner-auth.herokuapp.com/auth');
 
     ////////////////////
     //private const

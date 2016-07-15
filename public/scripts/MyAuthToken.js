@@ -25,15 +25,15 @@ function MyAuthToken(env)
 {
     if (env === "PROD") {
 
-        this.tokenService = "http://whiting-turner-auth.herokuapp.com/auth";
+        this.tokenService = "https://whiting-turner-auth.herokuapp.com/auth";
     }
     else if (env === "STG") {
 
-        this.tokenService = "http://whiting-turner-auth.herokuapp.com/auth";
+        this.tokenService = "https://whiting-turner-auth.herokuapp.com/auth";
     }
     else if (env === "DEV") {
 
-        this.tokenService = "http://whiting-turner-auth.herokuapp.com/auth";
+        this.tokenService = "https://whiting-turner-auth.herokuapp.com/auth";
     }
     else {
         alert("DEVELOPER ERROR: No valid environment set for MyAuthToken()");
@@ -94,6 +94,7 @@ MyAuthToken.prototype.get = function()
         },
         error: function(jqXHR, textStatus) {
             console.log(jqXHR);
+            alert(textStatus);
             alert("AUTH TOKEN: Failed to get new auth token!");
         }
     });

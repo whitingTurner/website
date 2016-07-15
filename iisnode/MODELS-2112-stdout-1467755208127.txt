@@ -1,9 +1,0 @@
-Server listening on port undefined
-connected to database
-[ RowDataPacket { email: 'j', password: 'j' } ]
-Select email,password from user_login where email =? and password = ?
-[ RowDataPacket { email: 'j', password: 'j' } ]
-im in if
-[ RowDataPacket { email: 'j', password: 'j' } ]
-success sent
-j

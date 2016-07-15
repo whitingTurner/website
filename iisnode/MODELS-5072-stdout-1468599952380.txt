@@ -1,0 +1,23 @@
+Server listening on port undefined
+connected to database
+checking if user is logged in
+session=undefined
+no session set
+UserName= j
+Password= j
+$2a$10$m.fb5cYA7goDWYym1MlPgu6rNpf27QEg8wDjhdy.i0N/DaHfOahMG
+Fetched this details= [ RowDataPacket {
+    email: 'j',
+    password: '$2a$10$m7thHGa4y6TayH94F9MjseN7cY4M4ZpHPPQ3TZ2.xpexKxrd9/p72' } ]
+hashed Password matched
+Success
+i am being called
+undefined
+Session deleted
+Firefox is killing me
+log_out sent
+checking if user is logged in
+session=j
+checking if user is logged in
+session=undefined
+no session set

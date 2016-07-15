@@ -1,0 +1,7 @@
+Server listening on port undefined
+connected to database
+i am being called
+j
+Session deleted
+Firefox is killing me
+log_out sent

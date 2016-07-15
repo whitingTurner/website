@@ -1,0 +1,10 @@
+Server listening on port undefined
+connected to database
+checking if user is logged in
+session=undefined
+no session set
+i am being called
+undefined
+Session deleted
+Firefox is killing me
+log_out sent
