@@ -50,9 +50,9 @@ app.set('port', process.env.PORT);
 var connection = mysql.createConnection({
     host : 'localhost',
     user :  'root',
-    password :'root',
+    password :'',
     database: 'whiting_turner',
-    port: '3306',
+    port: '3307',
 });
 
 //Send data from lmvmodels to populate the Drop down list in index1.html (label and urn)

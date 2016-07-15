@@ -25,28 +25,37 @@ urn_x='hello';file_name_x='jj';
 */
 $('#out_out').click(function(event){
     event.preventDefault();
-    confirm("Are you Sure, you want to Log out?");
-    $.get( "/logout1", function( data ){
-        if(data=='log_out')
-        {
-            //alert('hi this is main.js')
-            window.location="/";
-        }
+    var txt;
 
-    });
+    var r =  confirm("Are you Sure, you want to Log out?");
+    if(r == true){
+        $.get( "/logout1", function( data ){
+            if(data=='log_out')
+            {
+                //alert('hi this is main.js')
+                window.location="/";
+            }
+
+        });
+    }
+
 });
 
 //logout button on index page
 $('#out_index').click(function(event){
     console.log('out indeex is being called randomly');
-    $.get("/logout1",function(data){
-        if(data=='log_out')
-        {
-            //alert('hi this is main.js')
-            window.location="/"
-        }
+    var r =  confirm("Are you Sure, you want to Log out?");
+    if(r == true){
+        $.get("/logout1",function(data){
+            if(data=='log_out')
+            {
+                //alert('hi this is main.js')
+                window.location="/"
+            }
 
-    });
+        });
+    }
+
 
 });
 //for handling the carousel function in the bootstrap

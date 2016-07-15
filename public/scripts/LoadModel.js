@@ -85,14 +85,17 @@ function loadModelMenuOptions() {
 }
 $('#out_out').click(function(event){
     event.preventDefault();
-    confirm("Are you Sure, you want to Log out?");
-    $.get( "/logout1", function( data ){
-        if(data=='log_out')
-        {
-            window.location="/";
-        }
+    var r = confirm("Are you Sure, you want to Log out?");
+    if(r==true){
+        $.get( "/logout1", function( data ){
+            if(data=='log_out')
+            {
+                window.location="/";
+            }
 
-    });
+        });
+    }
+
 });
 
 //fullscreen button
