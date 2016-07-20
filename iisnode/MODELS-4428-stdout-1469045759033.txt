@@ -32,3 +32,43 @@ checking if user is logged in
 session=j
 Session set = j
 ADMIN Value=1
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=1
+checking if user is logged in
+session=undefined
+no session set
+UserName= tyler.davis@gmail.com
+Password= whiting-turner.com
+$2a$10$KTFtOS9IzvvqZJYrZL16XODhUXghciMHDH7QhCQVG2q3.Hn8AjKmK
+Fetched this details= [ RowDataPacket {
+    email: 'tyler.davis@gmail.com',
+    password: '$2a$10$mpqxkck1TGGsKgfz4q2qqOBoeHAJqnHruQoOnn/rx8KHYatIf9wmy',
+    admin: 1 } ]
+hashed Password matched
+Success
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=1
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=1

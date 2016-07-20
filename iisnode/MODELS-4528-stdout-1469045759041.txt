@@ -54,3 +54,43 @@ undefined
 Session deleted
 Firefox is killing me
 log_out sent
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=1

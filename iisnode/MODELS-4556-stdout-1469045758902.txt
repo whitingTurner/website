@@ -16,3 +16,27 @@ checking if user is logged in
 session=j
 Session set = j
 ADMIN Value=0
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=0
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=0
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=0
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=0
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=0
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=0
