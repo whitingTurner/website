@@ -52,12 +52,14 @@
 	<script type="text/javascript">
 		function check(){
 
+
+
 			$.get( "/check", function( data ){
 
 				if(data == 'ns')
 				{
 					//$('#out_index').show();
-
+					$('#admin').hide();
 					$('#uploadx').hide();
 					$('#modelsx').hide();
 					$('#log_in').show();
@@ -67,12 +69,21 @@
 				else{
 					//alert('session is set = ' + data);
 					//window.location ='/admin.html';
+					if(data =='a'){
+						$('#admin').show();
+					}
+					else{
+						$('#admin').hide();
+					}
 					$('#uploadx').show();
 					$('#modelsx').show ();
 					$('#log_in').hide();
 					$('#out_index').show();
 					if(data =='a'){
 						$('#admin').show();
+					}
+					else{
+						$('#admin').hide();
 					}
 				}
 

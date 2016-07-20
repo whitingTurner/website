@@ -1,0 +1,34 @@
+Server listening on port undefined
+connected to database
+checking if user is logged in
+session=undefined
+no session set
+checking if user is logged in
+session=chad.clark@whiting-turner.com
+Session set = chad.clark@whiting-turner.com
+ADMIN Value=0
+UserName= j
+Password= j
+$2a$10$eWDXsjepzk8ti5dZh1Qz1OTkkLc8mM6It/Pbmv7wF2e7.Qe1xNcGK
+Fetched this details= [ RowDataPacket {
+    email: 'j',
+    password: '$2a$10$m7thHGa4y6TayH94F9MjseN7cY4M4ZpHPPQ3TZ2.xpexKxrd9/p72',
+    admin: 1 } ]
+hashed Password matched
+Success
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=1
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=1
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=1
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=1

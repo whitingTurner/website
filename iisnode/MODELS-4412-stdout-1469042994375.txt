@@ -1,0 +1,41 @@
+Server listening on port undefined
+connected to database
+checking if user is logged in
+session=try@try.com
+Session set = try@try.com
+ADMIN Value=0
+checking if user is logged in
+session=undefined
+no session set
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=0
+i am being called
+j
+Session deleted
+Firefox is killing me
+log_out sent
+checking if user is logged in
+session=undefined
+no session set
+UserName= try2@gmail.com
+Password= try
+$2a$10$D1BfSBN.I6OQ.3A8oRIY.OqP2.mOMZ4E1KiUakMTCrChZgDh.wxK.
+Fetched this details= [ RowDataPacket {
+    email: 'try2@gmail.com',
+    password: '$2a$10$/0U2iYFMTfhtp3uv1C4YWujcEaUc4.IpD5tuNBToVWDbIpGx2S5ZC',
+    admin: 1 } ]
+hashed Password matched
+Success
+checking if user is logged in
+session=try2@gmail.com
+Session set = try2@gmail.com
+ADMIN Value=1
+checking if user is logged in
+session=chad.clark@whiting-turner.com
+Session set = chad.clark@whiting-turner.com
+ADMIN Value=1
+checking if user is logged in
+session=undefined
+no session set

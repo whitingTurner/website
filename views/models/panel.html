@@ -35,7 +35,7 @@
         function check(){
             $.get( "/check", function( data ){
                 //alert(data);
-                if(data=='ns')
+                if(data=='ns' || data == 's')
                 {
                     alert('You are not logged in, please Sign in');
                     window.location="/";

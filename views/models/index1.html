@@ -47,12 +47,6 @@
     <script src="../../public/scripts/MyAuthToken.js"></script>
     <script>var debugging = true;</script>
 
-    <<script type="text/javascript">
-    $(document).ready(function(){
-        $('#admin').hide();
-    });
-
-</script>
 
     <script type="text/javascript">
         function check(){
@@ -64,6 +58,9 @@
                 }
                 if(data =='a'){
                     $('#admin').show();
+                }
+                else{
+                    $('#admin').hide();
                 }
             });
         }
@@ -109,7 +106,6 @@
 </head>
 
 <body onload="read_lmvmodels();" oncontextmenu="return debugging;">
-
 <!-- Inspector column -->
 <div class="project-info-column">
 

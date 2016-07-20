@@ -1,23 +1,27 @@
 Server listening on port undefined
 connected to database
 checking if user is logged in
-session=undefined
-no session set
+session=j
+Session set = j
+ADMIN Value=0
 UserName= j
 Password= j
-$2a$10$m.fb5cYA7goDWYym1MlPgu6rNpf27QEg8wDjhdy.i0N/DaHfOahMG
+$2a$10$jj7vGvXA0PwfGAbC11NZOOa5mIHOo67t7/uvL/vp/BXuiHHLGBz4i
 Fetched this details= [ RowDataPacket {
     email: 'j',
-    password: '$2a$10$m7thHGa4y6TayH94F9MjseN7cY4M4ZpHPPQ3TZ2.xpexKxrd9/p72' } ]
+    password: '$2a$10$m7thHGa4y6TayH94F9MjseN7cY4M4ZpHPPQ3TZ2.xpexKxrd9/p72',
+    admin: 1 } ]
 hashed Password matched
 Success
 i am being called
-undefined
+j
 Session deleted
 Firefox is killing me
 log_out sent
 checking if user is logged in
-session=j
-checking if user is logged in
 session=undefined
 no session set
+checking if user is logged in
+session=tyler.davis@gmail.com
+Session set = tyler.davis@gmail.com
+ADMIN Value=1

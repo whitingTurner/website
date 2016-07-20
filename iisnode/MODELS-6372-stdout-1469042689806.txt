@@ -1,0 +1,25 @@
+Server listening on port undefined
+error connecting to the databaseError: connect ECONNREFUSED 127.0.0.1:3307
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1061:14)
+    --------------------
+    at Protocol._enqueue (C:\Program Files\new_site\node_modules\mysql\lib\protocol\Protocol.js:141:48)
+    at Protocol.handshake (C:\Program Files\new_site\node_modules\mysql\lib\protocol\Protocol.js:52:41)
+    at Connection.connect (C:\Program Files\new_site\node_modules\mysql\lib\Connection.js:136:18)
+    at Server.<anonymous> (C:\Program Files\new_site\server.js:298:16)
+    at Server.g (events.js:260:16)
+    at emitNone (events.js:67:13)
+    at Server.emit (events.js:166:7)
+    at emitListeningNT (net.js:1260:10)
+    at nextTickCallbackWith1Arg (node.js:431:9)
+    at process._tickCallback (node.js:353:17)
+checking if user is logged in
+session=undefined
+no session set
+checking if user is logged in
+session=undefined
+no session set
+checking if user is logged in
+session=undefined
+no session set

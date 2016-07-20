@@ -1,0 +1,48 @@
+Server listening on port undefined
+connected to database
+i am being called
+chad.clark@whiting-turner.com
+Session deleted
+Firefox is killing me
+log_out sent
+UserName= chad.clark@whiting-turner.com
+Password= chadclark
+$2a$10$K2ZMu2T/fCzKl8mNOMkPVO4.Nw3fuvgcNaCXAcTnY9qCKww13WUTe
+Fetched this details= [ RowDataPacket {
+    email: 'chad.clark@whiting-turner.com',
+    password: '$2a$10$edFIOopzAdhe2LZo02zckO2JHurHCX0ksYRYI2nPRuMBBVKElynoe',
+    admin: 0 } ]
+hashed Password matched
+Success
+checking if user is logged in
+session=undefined
+no session set
+i am being called
+j
+Session deleted
+Firefox is killing me
+log_out sent
+checking if user is logged in
+session=undefined
+no session set
+checking if user is logged in
+session=undefined
+no session set
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=0
+i am being called
+j
+Session deleted
+Firefox is killing me
+log_out sent
+checking if user is logged in
+session=undefined
+no session set
+checking if user is logged in
+session=undefined
+no session set
+checking if user is logged in
+session=undefined
+no session set

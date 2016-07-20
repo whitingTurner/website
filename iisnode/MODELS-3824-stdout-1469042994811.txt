@@ -1,0 +1,37 @@
+Server listening on port undefined
+connected to database
+UserName= try@try.com
+Password= try
+$2a$10$hY36b0zYruz/1cKuFtQwo.6qxFJqJbhjM1Rv.k0X/Dzqu4T70EHDS
+Fetched this details= [ RowDataPacket {
+    email: 'try@try.com',
+    password: '$2a$10$mCE3FmfhwATuYsKnhe9o.OPU5UWkxaQJ.7Z6qrgRtGPo5CKBMEcQG',
+    admin: 1 } ]
+hashed Password matched
+Success
+checking if user is logged in
+session=j
+Session set = j
+ADMIN Value=1
+try2try2@gmail.com$2a$10$/0U2iYFMTfhtp3uv1C4YWujcEaUc4.IpD5tuNBToVWDbIpGx2S5ZC
+i am being called
+tyler.davis@gmail.com
+Session deleted
+Firefox is killing me
+log_out sent
+checking if user is logged in
+session=undefined
+no session set
+UserName= chad.clark@whiting-turner.com
+Password= chadclark
+$2a$10$zNIwOT7THqjkYbCpk4YwbeJxYRnYB5jlgjTBzeMEl446jGNWGEhJO
+Fetched this details= [ RowDataPacket {
+    email: 'chad.clark@whiting-turner.com',
+    password: '$2a$10$edFIOopzAdhe2LZo02zckO2JHurHCX0ksYRYI2nPRuMBBVKElynoe',
+    admin: 0 } ]
+hashed Password matched
+Success
+checking if user is logged in
+session=chad.clark@whiting-turner.com
+Session set = chad.clark@whiting-turner.com
+ADMIN Value=0

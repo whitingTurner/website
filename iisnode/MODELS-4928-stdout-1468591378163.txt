@@ -1,2 +1,0 @@
-Server listening on port undefined
-connected to database

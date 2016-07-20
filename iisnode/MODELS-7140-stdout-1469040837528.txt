@@ -3,7 +3,7 @@ connected to database
 checking if user is logged in
 session=j
 i am being called
-j
+try@try.com
 Session deleted
 Firefox is killing me
 log_out sent

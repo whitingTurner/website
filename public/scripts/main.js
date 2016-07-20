@@ -60,7 +60,7 @@ $('#out_index').click(function(event){
 });
 //for handling the carousel function in the bootstrap
 $("#carousel").carousel();
-$('#admin').hide();
+
 $('#out_index').hide();
 $('#w_login').click(function(event){
     event.preventDefault();
