@@ -43,16 +43,12 @@
 
 
 	</style>
-	<script>
-		window.onunload = function(){
-			$.get('/logout',function(data){
-				if(data=='log_out'){
-					console.log('session deleted afer unloading');
-				}
-			})
-		}
-	</script>
+	<!--<script type="text/javascript">
+		$(document).ready(function(){
+			$('#admin').hide();
+		});
 
+	</script>-->
 	<script type="text/javascript">
 		function check(){
 
@@ -75,12 +71,20 @@
 					$('#modelsx').show ();
 					$('#log_in').hide();
 					$('#out_index').show();
+					if(data =='a'){
+						$('#admin').show();
+					}
 				}
 
 			});
 		}
 		$(document).ready(check);
+		$(".navbar-toggle").click(function(event) {
+			$(".navbar-collapse").toggle('in');
+		});
+
 	</script>
+
 </head>
 <body>
 <!-- navigation bar -->
@@ -89,27 +93,29 @@
 		<div class="navbar-header">
 			<a class="pull-left" href="#"><img alt="brand"  style="margin-top: 7px" src="../../public/images/WT-Orange.jpg" width="60" height="35" >
 			</a>
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only ">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+
 		</div>
-		<ul class="nav navbar-nav">
-			<li style="text-align: center"><a href="http://www.whiting-turner.com/">WHITING-TURNER</a></li>
-		</ul>
-		<div class="collapse navbar-collapse" id="colnavbar">
-			<ul class="nav navbar-nav">
+
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+		<ul class="nav navbar-nav navbar-left navr">
+			<li ><a href="http://www.whiting-turner.com/">WHITING-TURNER</a></li>
 				<li><a href="http://www.whiting-turner.com/about_us/about_us.html">About us</a></li>
 				<li><a href="http://www.whiting-turner.com/contact/contact.html">Contact Us</a></li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<!--<li class="pull-right"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li> -->
-			</ul>
 		</div>
+		<div class="col-lg-1 col-md-1 hidden-sm" align="right"></div>
+	</div>
 	</div>
 </nav>
 <div class="container-fluid text-center pagination-centered " style="margin-top: 20%"  >
 
-	<h1 class="display-1">Whiting-Turner Model Viewer</h1>
+	<h1 class="display-1">Whiting-Turner Model Viewer</h1><br/><br />
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="log_in">Log in</button><br /> <br />
 	<span><a href="/admin.html" id="uploadx">Upload Model</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
 	<span><a href="/index1.html" id="modelsx">View 3d Models</a></span><br /> <br />
+	<span><a href="/panel.html" id="admin">ADMIN PANEL</a></span><br /> <br />
+	<div><spav></spav></div>
 	<button type="button" class="btn btn-danger" id="out_index">Logout</button>
 
 
@@ -141,6 +147,8 @@
 	</div>
 </div>
 
+<!-- to load the page faster, all scripts are down -->
+
 <!-- jQuery -->
 <script src="//code.jquery.com/jquery.js"></script>
 <!-- Bootstrap JavaScript -->
@@ -149,6 +157,9 @@
 
 <script type="text/javascript" src="https://rawgit.com/Developer-Autodesk/library-javascript-view.and.data.api/master/js/Autodesk.ADN.Toolkit.ViewData.js"></script>
 <script type="text/javascript" src="../../public/scripts/main.js"></script>
+
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
 </body>
 </html>

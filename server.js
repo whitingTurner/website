@@ -14,6 +14,7 @@ var session = require('cookie-session');
 var uuid=require('uuid');
 var app=express();
 var unique_id;
+var admin=0;
 app.use(bodyParser.urlencoded({ extended: false })); //for retrieving the data from the javascript file.
 
 // Cookie parsing needed for sessions
@@ -66,6 +67,28 @@ app.get( '/lmvmodels',function(req,res){
     });
 });
 
+//adding new user
+app.post('/insert',function(req,res){
+    var user_name=req.body.u;
+    var email=req.body.i;
+    var pass=req.body.p;
+    var password=bcrypt.hashSync(pass);
+    var ad=req.body.a;
+    var r='';
+    data={username:user_name,email:email,password:password,admin:ad};
+    console.log(user_name+email+password);
+    connection.query("INSERT into user_login SET ?",data,function(err,rows,fields){
+        if(err){
+            console.log(err);
+            res.send('f');
+        }
+        else{
+             res.send('s');
+        }
+    });
+   // console.log("R = " + r);
+    //res.send(r);
+});
 //function to insert uploaded model into database(lmvmodeloption)
 app.post('/endpoint',function(req,res){
     var user_name=req.body.user1;
@@ -118,7 +141,14 @@ function isUserLoggedIn(req,res){
         res.send('ns');
     }
     else{
-        res.send('s');
+        console.log('Session set = '+ req.session.user_wt);
+        console.log('ADMIN Value='+ admin);
+        if(admin==1){
+            res.send('a');
+        }
+        else{
+            res.send('s');
+        }
     }
 
 }
@@ -160,14 +190,32 @@ function update(u_wt,callback){
 
     });
 };
+
+function online(req,res){
+
+
+        var query="select username,logged_in,last_logged_in,admin from user_login";
+        connection.query(query,function(err,rows,fields){
+            if(!err){
+                res.send(rows);
+            }
+            else{
+                console.log(err);
+                res.send(err);
+            }
+        });
+
+}
+//seding the online data to panel
+app.get('/online',online);
 //endpoint for login and authentication
 app.post('/login',function(req,res){
     var p_wt=req.body.pass_w;
     var u_wt=req.body.user_w;
     console.log('UserName=',u_wt);
     console.log('Password=',p_wt);
-    console.log(bcrypt.hashSync(p_wt));
-    var q='Select email,password from user_login where email =?;'
+    console.log(bcrypt.hashSync('thomasbanach'));
+    var q='Select email,password,admin from user_login where email =?;'
     connection.query(q,[u_wt],function(err,rows,fields){
 
         //if email is present in database
@@ -190,16 +238,16 @@ app.post('/login',function(req,res){
                            }
 
                         });*/
-
+                     admin=rows[0].admin;
                     req.session.user_wt=req.body.user_w;
                     console.log('Success');
-                    res.send("success");
+                    res.send({result: "success", ad: admin});
 
                 }//inner if ends
                 else
                 {
                     console.log('Sending bad data');
-                    res.send('bad data');
+                    res.send({result:'bad data'});
                 }//inner else ends
                /* update(u_wt,function(data){
                     if(data==0)
@@ -225,7 +273,7 @@ app.post('/login',function(req,res){
             }//if ends
             else{
                 console.log("bad data");
-                res.send("bad data");
+                res.send({result:'bad data'});
             }//else ends
         }
         else{

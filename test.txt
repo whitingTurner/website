@@ -1,1 +1,1 @@
-ReferenceError: c is not defined
+TypeError: res.send is not a function

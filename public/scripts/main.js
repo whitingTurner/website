@@ -60,6 +60,7 @@ $('#out_index').click(function(event){
 });
 //for handling the carousel function in the bootstrap
 $("#carousel").carousel();
+$('#admin').hide();
 $('#out_index').hide();
 $('#w_login').click(function(event){
     event.preventDefault();
@@ -71,17 +72,23 @@ $('#w_login').click(function(event){
     //alert(user_name_wt);
     $.post("/login",{user_w: user_name_wt, pass_w: password_wt}, function (data) {
       //  alert(data);
-
-       if(data == "success") {
+      //  alert(data.result + "" + "" +data.ad);
+            var d= data.result;
+       // alert(d);
+        if(data.ad==1){
+            $("#admin").show();
+        }
+        console.log(d);
+       if(d=="success") {
               // alert(data);
                window.location="/admin.html"
        }
-        else if(data=='Already'){
+        else if(data== d){
            //alert(data);
            alert('You are already logged in other device or PC');
            window.location='/';
        }
-        else if(data=='bad data'){
+        else if(d=='bad data'){
           // alert(data);
          //  alert(data);
            alert('Invalids details, Either Email or Password is incorrect');
@@ -115,6 +122,7 @@ console.log("flag="+ flag)
 
 
 jQuery(document).ready(function($) {
+
 
 
     var viewDataClient = new Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient(

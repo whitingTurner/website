@@ -17,6 +17,7 @@
     <meta content="3D Model Viewer" name="keywords" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700" rel="stylesheet" type="text/css" />
+
     <link href="../../public/styles/libs/normalize.css" rel="stylesheet" type="text/css" />
     <link href="../../public/styles/libs/nv.d3.css" rel="stylesheet">
     <link href="../../public/styles/app.css" rel="stylesheet" type="text/css" />
@@ -46,6 +47,13 @@
     <script src="../../public/scripts/MyAuthToken.js"></script>
     <script>var debugging = true;</script>
 
+    <<script type="text/javascript">
+    $(document).ready(function(){
+        $('#admin').hide();
+    });
+
+</script>
+
     <script type="text/javascript">
         function check(){
             $.get( "/check", function( data ){
@@ -53,6 +61,9 @@
                 if(data=='ns')
                 {
                     window.location="/";
+                }
+                if(data =='a'){
+                    $('#admin').show();
                 }
             });
         }
@@ -93,15 +104,7 @@
         }
     </script>
 
-    <script>
-        window.onunload = function(){
-            $.get('/logout1',function(data){
-                if(data=='log_out'){
-                    console.log('session deleted afer unloading');
-                }
-            })
-        }
-    </script>
+
 
 </head>
 
@@ -123,7 +126,7 @@
             <!-- Options filled in by function in LoadModel.js -->
         </select>
     </div>
-    <a href="#" id="fullscreenbutton"><span>New window</span></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="excel" href="#" onclick="export_excel()">Export to Excel</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="out_out" href="#" onclick="out_out();"><span>logout</span></a>
+    <a href="/panel.html" id="admin"><span>ADMIN PANEL</span></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" id="fullscreenbutton"><span>New window</span></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="excel" href="#" onclick="export_excel()">Export to Excel</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="out_out" href="#" onclick="out_out();"><span>logout</span></a>
 
     <ul class="tab-buttons" id="tab_buttons">
         <li class="tab-button active">
