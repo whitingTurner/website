@@ -15,6 +15,7 @@ var uuid=require('uuid');
 var app=express();
 var unique_id;
 var admin=0;
+var per_email;
 app.use(bodyParser.urlencoded({ extended: false })); //for retrieving the data from the javascript file.
 
 // Cookie parsing needed for sessions
@@ -51,19 +52,27 @@ app.set('port', process.env.PORT);
 var connection = mysql.createConnection({
     host : 'localhost',
     user :  'root',
-    password :'',
+    password :'root',
     database: 'whiting_turner',
-    port: '3307',
+    port: '3306',
 });
 
 //Send data from lmvmodels to populate the Drop down list in index1.html (label and urn)
 app.get( '/lmvmodels',function(req,res){
-    var query="select label,urn from lmvmodeloption";
-    connection.query(query,function(err,rows,fields){
+    var query="select label,urn from per_table where email = ?";
+    console.log('PER EMAIL in ='+per_email);
+   var email=per_email;
+    connection.query(query,[per_email],function(err,rows,fields){
         if(!err)
+        {
+            console.log(rows);
+            console.log('success');
             res.send(rows);
+        }
+        
+           
         else
-            console.log(err.stack);
+            console.log("Error="+err.stack);
     });
 });
 
@@ -194,7 +203,7 @@ function update(u_wt,callback){
 function online(req,res){
 
 
-        var query="select username,logged_in,last_logged_in,admin from user_login";
+        var query="select * from user_login";
         connection.query(query,function(err,rows,fields){
             if(!err){
                 res.send(rows);
@@ -208,10 +217,47 @@ function online(req,res){
 }
 //seding the online data to panel
 app.get('/online',online);
+
+
+function fetchmodels(req,res){
+    connection.query('Select * from lmvmodeloption',function(err,rows,fields){
+        if(!err){
+            res.send(rows);
+        }
+        else{
+            console.log(err);
+            res.send(err);
+        }
+    })
+
+}
+app.get('/getModels',fetchmodels);
+
+function insert_permission(req,res){
+    var _email=req.body.e;
+    var _label=req.body.l;
+    var _urn=req.body.u;
+
+    var post={email:_email,label:_label,urn:_urn};
+    connection.query('Insert into per_table SET ?',post,function(err,rows,fields){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send('success');
+        }
+    })
+}
+
+app.post('/per_table',insert_permission);
+
+
 //endpoint for login and authentication
 app.post('/login',function(req,res){
     var p_wt=req.body.pass_w;
     var u_wt=req.body.user_w;
+    per_email=u_wt;
+    console.log('PER EMAIL='+per_email);
     console.log('UserName=',u_wt);
     console.log('Password=',p_wt);
     console.log(bcrypt.hashSync('thomasbanach'));

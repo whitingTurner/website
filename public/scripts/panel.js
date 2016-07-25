@@ -22,14 +22,34 @@ $(document).ready(function(){
     $.get('/online',function(data){
     var del='DELETE'
             var results=document.getElementById('response');
+           
         for(var i=0;i<data.length;i++){
             results.innerHTML += "<tr><td>"+data[i].username+"</td><td>"+data[i].last_logged_in+"</td><td>"+data[i].logged_in+"</td><td>"+data[i].admin+"</td><td><button class='btn btn-danger'>"+del+"</button> </td><td><button class='editbtn btn btn-warning'>Edit</td></tr>";
 
         }//end of for loop
+        //Loading the users form the databse
+        // add the new options for models
+        var sel = $("#user_select");
+        // alert(_lmvModelOptions[0].label);
+        $.each(data, function(i, item) {
+            sel.append($("<option>", {
+                value: i,
+                text : data[i].email
+            }));
+        });
 
     });//end of get function
 
-
+    $.get('/getModels',function(data){
+        var res= $('#models');
+        $.each(data,function(i){
+            console.log(data[i].label)
+            res.append($("<option>",{
+                value: data[i].urn,
+                text : data[i].label
+            }));
+        });
+    }); //end of the get function
 
     //adding user to the database
     $('#register').click(function(event){
@@ -74,4 +94,46 @@ $(document).ready(function(){
      }
      });
 
+
+    //onclick of the add button
+    $('#add_model').click(function(){
+
+
+        var per_table=[
+            {
+                email: '',label: '',urn: ''
+            }
+        ]
+        var e = document.getElementById("user_select");
+        var strUser = e.options[e.selectedIndex].text
+        alert(strUser);
+        var values = $('#models').val();
+        alert(values[0]);
+        console.log(values);
+        var foo=[];
+        $('#models :selected').each(function(i, selected){
+            foo[i] = $(selected).text();
+            //per_table[i].email=strUser;
+            //per_table[i].urn=values[i];
+            //per_table[i].label=foo[i];
+            per_table.push({email:strUser, label: foo[i], urn: values[i]});
+           
+        });
+        for(var i=1;i<=per_table.length;i++){
+          var  email_=per_table[i].email;
+           var label_=per_table[i].label;
+            var urn_=per_table[i].urn
+            $.post('/per_table',{e:email_,l:label_,u:urn_},function(data){
+                if(data=='success'){
+                    console.log('success');
+                }
+            })
+            
+        }
+      
+        console.log(per_table);
+       alert(foo[0]);
+        console.log(foo);
+    })
+   
 });//end of ready function
