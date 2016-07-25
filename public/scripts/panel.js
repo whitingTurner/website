@@ -3,22 +3,32 @@
  */
 
 
-
+function make_editable(){
+    alert('you clicked me');
+    console.log('hi');
+}
 
 //Adding User to the Database
 
 //Ready function
 $(document).ready(function(){
 
-    $.get('/online',function(data){
+    $("#editbtn").click(function(){
 
+        make_editable();
+    });
+
+    
+    $.get('/online',function(data){
+    var del='DELETE'
             var results=document.getElementById('response');
         for(var i=0;i<data.length;i++){
-            results.innerHTML += "<tr><td>"+data[i].username+"</td><td>"+data[i].last_logged_in+"</td><td>"+data[i].logged_in+"</td><td>"+data[i].admin+"</td></tr>";
+            results.innerHTML += "<tr><td>"+data[i].username+"</td><td>"+data[i].last_logged_in+"</td><td>"+data[i].logged_in+"</td><td>"+data[i].admin+"</td><td><button class='btn btn-danger'>"+del+"</button> </td><td><button class='editbtn btn btn-warning'>Edit</td></tr>";
 
         }//end of for loop
 
     });//end of get function
+
 
 
     //adding user to the database
@@ -29,7 +39,7 @@ $(document).ready(function(){
         var pass= document.getElementById('password').value;
         var id= document.getElementById('email').value;
         var x=$('input[name=optradio]:checked').val();
-        alert(x);
+       // alert(x);
         if(x=='admin'){
             admin=1;
         }else{
