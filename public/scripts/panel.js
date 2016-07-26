@@ -102,9 +102,9 @@ $(document).ready(function(){
 
         var e = document.getElementById("user_select");
         var strUser = e.options[e.selectedIndex].text
-        alert(strUser);
+        //alert(strUser);
         var values = $('#models').val();
-        alert(values[0]);
+        //alert(values[0]);
         console.log(values);
         $('#models :selected').each(function(i, selected){
             foo[i] = $(selected).text();
@@ -137,9 +137,9 @@ $(document).ready(function(){
         ]
         var e = document.getElementById("user_select");
         var strUser = e.options[e.selectedIndex].text
-        alert(strUser);
+        //alert(strUser);
         var values = $('#models').val();
-        alert(values[0]);
+        //alert(values[0]);
         console.log(values);
         var foo=[];
         $('#models :selected').each(function(i, selected){
@@ -154,6 +154,7 @@ $(document).ready(function(){
             $.post('/per_table',{e:email_,l:label_,u:urn_},function(data){
                 if(data=='success'){
                     console.log('success');
+                    alert('Model Added');
                 }
             })
             
@@ -169,7 +170,7 @@ $(document).ready(function(){
       //  $('#models_assigned').empty();
         var email_id=$('#user_select option:selected').text();
         //alert(email);
-        alert(email_id);
+        //alert(email_id);
         var post={email:email_id};
         console.log(post);
         var select_models=$('#models_assigned');

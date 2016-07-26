@@ -46,8 +46,8 @@
       <file leaf-file-name="panel.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/scripts/panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="124" column="30" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
+            <state relative-caret-position="348">
+              <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc;n#make_editable#0" expanded="false" />
               </folding>
@@ -435,7 +435,7 @@
       <workItem from="1469046098270" duration="2434000" />
       <workItem from="1469504769957" duration="1332000" />
       <workItem from="1469544574489" duration="304000" />
-      <workItem from="1469544897336" duration="5092000" />
+      <workItem from="1469544897336" duration="5352000" />
     </task>
     <task id="LOCAL-00001" summary="almost updated website;added latest security features">
       <created>1468262557755</created>
@@ -451,11 +451,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469551902283</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="almost updated website;">
+      <created>1469552221940</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1469552221940</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72814000" />
+    <option name="totallyTimeSpent" value="73074000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1007" extended-state="0" />
@@ -515,7 +522,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="almost updated website" />
     <MESSAGE value="almost updated website;added latest security features" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost updated website;added latest security features" />
+    <MESSAGE value="almost updated website;" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost updated website;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -899,8 +907,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/panel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="124" column="30" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
+        <state relative-caret-position="348">
+          <caret line="156" column="41" selection-start-line="156" selection-start-column="41" selection-end-line="156" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc;n#make_editable#0" expanded="false" />
           </folding>
