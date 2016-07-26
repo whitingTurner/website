@@ -18,6 +18,7 @@ $(document).ready(function(){
         make_editable();
     });
 
+
     
     $.get('/online',function(data){
     var del='DELETE'
@@ -134,6 +135,27 @@ $(document).ready(function(){
         console.log(per_table);
        alert(foo[0]);
         console.log(foo);
-    })
-   
+    });
+
+    $('#user_select').change(function(){
+        //alert('you changed me');
+      //  $('#models_assigned').empty();
+        var email_id=$('#user_select option:selected').text();
+        //alert(email);
+        alert(email_id);
+        var post={email:email_id};
+        console.log(post);
+        var select_models=$('#models_assigned');
+        $.post('/get_models',{e:email_id},function(data){
+            $('#models_assigned').empty();
+            $.each(data,function(i,item){
+                select_models.append($("<option>",{
+                    value:i,
+                    text : data[i].label
+                }));
+            });
+        })
+    });
+
+
 });//end of ready function

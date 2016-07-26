@@ -10,7 +10,7 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Dashboard Template for Bootstrap</title>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="../../public/styles/libs/bootstrap.min.css" rel="stylesheet">
     <script src="../../public/styles/libs/bootstrap.min.js"></script>
@@ -31,7 +31,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
     <script>
 
        $(document).ready(function(){
@@ -228,18 +228,18 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-md-8" id="div4" style="display:none">
+                <div class="col-md-12" id="div4" style="display:none">
                 <span class="lead">Users & Models</span><br/><br /><br />
                     <form>
                         <fieldset class="form-inline">
                             <span><label for="select_user">SELECT USER</label></span>
                             <select class="form-control" id="user_select" class="select-light report-select-input">
-                                <option>Will populate data from Mysql</option>
+
                             </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                             <span><label for="models">Models Assigned</label></span>
                             <select class="form-control" id="models_assigned" class="select-light report-select-input">
-                                <option>Will populate from Mysql</option>
+
                             </select>
                             <br /><br />
                             <div class="control-group col-lg-5">
@@ -249,7 +249,7 @@
                                     </select>
                                 </div>
                             </div>
-                        </fieldset>
+                        </fieldset><br /><br /><br />
                         <div class="form-group">
                             <fieldset class="form-inline">
                             <button type="button" class="btn btn-success" id="add_model">Add</button>

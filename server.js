@@ -52,9 +52,9 @@ app.set('port', process.env.PORT);
 var connection = mysql.createConnection({
     host : 'localhost',
     user :  'root',
-    password :'root',
+    password :'',
     database: 'whiting_turner',
-    port: '3306',
+    port: '3307',
 });
 
 //Send data from lmvmodels to populate the Drop down list in index1.html (label and urn)
@@ -219,6 +219,27 @@ function online(req,res){
 app.get('/online',online);
 
 
+//app get to get the models
+app.post('/get_models',get_models);
+
+function get_models(req,res){
+    var  e=req.body.e;
+    console.log('models of email to be fetched='+e);
+    var query="Select * from per_table where email = ?";
+    connection.query(query,[e],function(err,rows,field){
+
+        if(err){
+            console.log(err);
+        }else{
+            console.log('rows fetched');
+            console.log(rows);
+            res.send(rows);
+        }
+
+    });
+}
+
+//
 function fetchmodels(req,res){
     connection.query('Select * from lmvmodeloption',function(err,rows,fields){
         if(!err){
