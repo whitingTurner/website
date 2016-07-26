@@ -95,7 +95,37 @@ $(document).ready(function(){
      }
      });
 
+    $('#del_model').click(function(){
+        var per_table1=[{
+            email: '',label: '',urn: ''
+        }];
 
+        var e = document.getElementById("user_select");
+        var strUser = e.options[e.selectedIndex].text
+        alert(strUser);
+        var values = $('#models').val();
+        alert(values[0]);
+        console.log(values);
+        $('#models :selected').each(function(i, selected){
+            foo[i] = $(selected).text();
+            per_table1.push({email:strUser, label: foo[i], urn: values[i]});
+
+        });for(var i=1;i<=per_table1.length;i++){
+            var  email_=per_table1[i].email;
+            var label_=per_table1[i].label;
+            var urn_=per_table1[i].urn
+            $.post('/per_table_del',{e:email_,l:label_,u:urn_},function(data){
+                if(data=='success'){
+                    console.log('success');
+                }
+            })
+
+        }
+
+        console.log(per_table1);
+        alert(foo[0]);
+        console.log(foo);
+    });
     //onclick of the add button
     $('#add_model').click(function(){
 
@@ -114,9 +144,6 @@ $(document).ready(function(){
         var foo=[];
         $('#models :selected').each(function(i, selected){
             foo[i] = $(selected).text();
-            //per_table[i].email=strUser;
-            //per_table[i].urn=values[i];
-            //per_table[i].label=foo[i];
             per_table.push({email:strUser, label: foo[i], urn: values[i]});
            
         });
