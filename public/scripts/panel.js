@@ -13,20 +13,74 @@ function make_editable(){
 //Ready function
 $(document).ready(function(){
 
-    $("#editbtn").click(function(){
-
+   /* $(".editbtn").click(function(){
+        alert('you clicked me');
         make_editable();
+    }); */
+
+    $(document).on('click', '#response1 .editbtn', function(){
+        var currentTD = $(this).parents('tr').find('td');
+        if ($(this).html() == 'Edit') {
+            $.each(currentTD, function () {
+                $(this).prop('contenteditable', true)
+            });
+            var currentRow1=$(this).closest("tr");
+            default_email=currentRow1.find("td:eq(1)").text();
+        } else {
+            $.each(currentTD, function () {
+                $(this).prop('contenteditable', false)
+            });
+        }
+
+
+       if($(this).html() == 'Save') {
+            var currentRow=$(this).closest("tr");
+           var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+           var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+           var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+           var col4=currentRow.find("td:eq(3)").text();
+           var data=col1+"\n"+col2+"\n"+col3+"\n"+col4;
+           alert(data);
+          // $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
+           $.post('/update_table',{c1:col1,c2:col2,c3:col3,c4:col4,oe:default_email},function(data){
+               if(data=='success'){
+                   alert('User updated');
+               }
+               else{
+                   alert('Please try after sometime');
+               }
+           })
+        }
+        $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
     });
 
+    $(document).on('click','#response .editbtn1',function(){
+        alert('Deleting the recording');
+        var currentRow=$(this).closest("tr");
+        var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+        var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+        var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+        var col4=currentRow.find("td:eq(3)").text();
+        var data=col1+"\n"+col2+"\n"+col3+"\n"+col4;
+        //alert(data);
+        $.post('/del_user',{u:col1},function(data){
+            if(data=='success'){
+                alert('Entry Deleted');
+            }
+        });
+        $(this).closest('tr').remove();
+       
+    })
 
     
     $.get('/online',function(data){
     var del='DELETE'
             var results=document.getElementById('response');
-           
+            var result=document.getElementById('response1');
         for(var i=0;i<data.length;i++){
-            results.innerHTML += "<tr><td>"+data[i].username+"</td><td>"+data[i].last_logged_in+"</td><td>"+data[i].logged_in+"</td><td>"+data[i].admin+"</td><td><button class='btn btn-danger'>"+del+"</button> </td><td><button class='editbtn btn btn-warning'>Edit</td></tr>";
-
+            results.innerHTML += "<tr><td>"+data[i].username+"</td><td>"+data[i].last_logged_in+"</td><td>"+data[i].logged_in+"</td><td>"+data[i].admin+"</td><td><button class='editbtn1 btn btn-danger'>"+del+"</button> </td></tr>";
+            
+            result.innerHTML +="<tr><td contenteditable='false'>"+data[i].username+"</td><td>"+data[i].email+"</td><td contenteditable='false'>"+data[i].d_password+"</td><td contenteditable='false'>"+data[i].admin+"</td><td><button class='editbtn btn btn-warning'>Edit</td></tr>"
         }//end of for loop
         //Loading the users form the databse
         // add the new options for models
@@ -102,10 +156,11 @@ $(document).ready(function(){
 
         var e = document.getElementById("user_select");
         var strUser = e.options[e.selectedIndex].text
-        //alert(strUser);
+       // alert(strUser);
         var values = $('#models').val();
-        //alert(values[0]);
+       // alert(values[0]);
         console.log(values);
+        foo=[];
         $('#models :selected').each(function(i, selected){
             foo[i] = $(selected).text();
             per_table1.push({email:strUser, label: foo[i], urn: values[i]});
@@ -114,9 +169,11 @@ $(document).ready(function(){
             var  email_=per_table1[i].email;
             var label_=per_table1[i].label;
             var urn_=per_table1[i].urn
-            $.post('/per_table_del',{e:email_,l:label_,u:urn_},function(data){
+            $.post('/del_models',{e:email_,l:label_,u:urn_},function(data){
+              // alert(data);
                 if(data=='success'){
                     console.log('success');
+                    alert('Model Deleted');
                 }
             })
 

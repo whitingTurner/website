@@ -52,9 +52,9 @@ app.set('port', process.env.PORT);
 var connection = mysql.createConnection({
     host : 'localhost',
     user :  'root',
-    password :'',
+    password :'root',
     database: 'whiting_turner',
-    port: '3307',
+    port: '3306 ',
 });
 
 //Send data from lmvmodels to populate the Drop down list in index1.html (label and urn)
@@ -84,7 +84,7 @@ app.post('/insert',function(req,res){
     var password=bcrypt.hashSync(pass);
     var ad=req.body.a;
     var r='';
-    data={username:user_name,email:email,password:password,admin:ad};
+    data={username:user_name,email:email,password:password,admin:ad,d_password:pass};
     console.log(user_name+email+password);
     connection.query("INSERT into user_login SET ?",data,function(err,rows,fields){
         if(err){
@@ -218,7 +218,24 @@ function online(req,res){
 //seding the online data to panel
 app.get('/online',online);
 
+app.post('/update_table',update_table);
 
+function update_table(req,res){
+  var  username =req.body.c1;
+    var email=req.body.c2;
+    var d_password=req.body.c3;
+    var password=bcrypt.hashSync(d_password);
+    var admin=req.body.c4;
+    var email_or=req.body.oe;
+    connection.query('update user_login set username = ?,email=?,password=?,admin=?,d_password=? where email=?',[username,email,password,admin,d_password,email_or],function(err,rows,fields){
+        if(err){
+            console.log('Error');
+        }
+        else{
+            res.send('Success');
+        }
+    })
+}
 //app get to get the models
 app.post('/get_models',get_models);
 
@@ -272,7 +289,44 @@ function insert_permission(req,res){
 
 app.post('/per_table',insert_permission);
 
+app.post('/del_models',delete_models);
 
+app.post('/del_user',delete_user);
+
+function delete_user(req,res){
+
+    var user_name=req.body.u;
+    var post={username:user_name};
+    
+    connection.query('Delete from user_login where username = ?',[user_name],function(err,rows,fields){
+        if(err){
+            console.log(err);
+            res.send('error');
+        }else{
+            console.log('Entry Deleted');
+            res.send('success');
+        }
+    })
+
+
+}//function gets over
+function delete_models(req,res){
+    var _email=req.body.e;
+    var _label=req.body.l;
+    var _urn=req.body.u;
+
+    var post={email:_email,label:_label,urn:_urn};
+    console.log(post);
+    connection.query('Delete from per_table where email = ? and label =?',[_email,_label],function(err,rows,fields){
+        if(err){
+            console.log(err)
+        }
+        else{
+            res.send('success');
+        }
+    })
+
+}
 //endpoint for login and authentication
 app.post('/login',function(req,res){
     var p_wt=req.body.pass_w;
