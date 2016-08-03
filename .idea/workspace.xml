@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd874ef9-78ba-46da-89cf-ffd8264cfa90" name="Default" comment="&lt;li&gt;&lt;a href=&quot;/admin.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/scripts/qcForm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/models/qcForm.html" />
+    <list default="true" id="cd874ef9-78ba-46da-89cf-ffd8264cfa90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="updated_lmv.iws" />
@@ -495,7 +493,7 @@
       <workItem from="1470152927396" duration="26000" />
       <workItem from="1470152958348" duration="9942000" />
       <workItem from="1470172282701" duration="7873000" />
-      <workItem from="1470242206322" duration="3389000" />
+      <workItem from="1470242206322" duration="3413000" />
     </task>
     <task id="LOCAL-00001" summary="almost updated website;added latest security features">
       <created>1468262557755</created>
@@ -525,11 +523,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469552549198</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="quality control form">
+      <created>1470248338983</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1470248338983</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94731000" />
+    <option name="totallyTimeSpent" value="94755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="245" y="55" width="1920" height="1007" extended-state="0" />
@@ -590,7 +595,8 @@
     <MESSAGE value="almost updated website" />
     <MESSAGE value="almost updated website;added latest security features" />
     <MESSAGE value="almost updated website;" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost updated website;" />
+    <MESSAGE value="quality control form" />
+    <option name="LAST_COMMIT_MESSAGE" value="quality control form" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
