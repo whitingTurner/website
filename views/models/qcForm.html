@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="This page provides the form for Quality control and so on.">
+    <meta name="author" content="JeevJyot, Software Development Intern, Whiting-Turner Contracting Company">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Quality Control Form</title>
+    <!--Bootstrap Libraries & JQuery-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <script src="Bootstrap/js/bootstrap.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../public/scripts/qcForm.js"></script>
+
+    <!-- Bootstrap CDN -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="color: orangered;">WT Quality Control Form</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/admin.html">Home</a></li>
+                <li><a id="logout" href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Main Body Starts -->
+<div class="container" style="margin-top: 50px" >
+    <h2 class="text-center">Job 014470. 100 Bass Biolody Building Project</h2>
+    <div class="row" style="padding-top: 10px">
+        <div class="col-md-6">
+                <div class="form-group">
+                    <label for="QCN" class="col-sm-4">QC #</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="qc_number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4">Entered BY:</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" id="ini" type="text" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4">Inspection Date</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" id="iDate" type="text" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4">Project (Building)</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" id="project"  type="text">
+                    </div>
+                </div>
+            <div class="form-group">
+                <label for="QCN" class="col-sm-4">Contract Number</label>
+                <div class="col-sm-6">
+                    <input class="form-control input-sm" id="cn" type="text">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-4">Sub Contractor</label>
+                <div class="col-sm-6">
+                    <input class="form-control input-sm" id="subc" type="text" >
+                </div>
+            </div>
+        </div>
+        <!-- -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-5">Location (Column)</label>
+                <div class="col-sm-6">
+                    <input class="form-control input-sm" id="loc" type="text" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5">Design Package</label>
+                <div class="col-sm-6">
+                    <input class="form-control input-sm" type="text" id="dpack">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5">Sub-Tier Subcontractor</label>
+                <div class="col-sm-6">
+                    <input class="form-control input-sm" type="text" id="sub-tier">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5">Specification</label>
+                <div class="col-sm-6">
+                    <input class="form-control input-sm" type="text" id="specification">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5">Drawing</label>
+                <div class="col-sm-6">
+                    <input class="form-control input-sm" type="text" id="drawing">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-5">Submittal</label>
+                <div class="col-sm-6">
+                    <input class="form-control input-sm" type="text" id="submital">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr >
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label ><b><u>MATERIAL</u></b></label>
+            <textarea class="form-control" id="material" rows="3"></textarea>
+        </div>
+        <div class="form-group col-md-12">
+            <label ><b><u>NOTES & COMMENTS</u></b></label>
+            <textarea class="form-control" id="notes" rows="3"></textarea>
+            <div class="pictures">
+                <span>Pictures Taken</span>&nbsp;
+                <label class="radio-inline"><input type="radio" name="optradio" id="c1" value="yea">YES</label>
+                <label class="radio-inline"><input type="radio" name="optradio" id="c2" value="nope">NO</label>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group col-md-12 rad" id="radio_one">
+            <span>Through this inspection, the item was found to be apparently in compliance with the drawings and Specifications</span>
+
+                <label class="radio-inline"><input type="radio" name="optradio1" id="r1" value="yes">YES</label>
+                <label class="radio-inline"><input type="radio" name="optradio1" id="r2" value="no">NO</label>
+
+        </div>
+        <hr>
+
+            <div class="form-group col-md-12">
+                <label ><b><u>FURTHER ACTION RECOMMNENDED: (corrective measures required)</u></b></label>
+                <textarea class="form-control" id="recommend" rows="3"></textarea> <br>
+                <label class="col-sm-3">Date To be Performed</label>
+                <div class="col-sm-3">
+                    <input class="form-control input-sm" type="text" id="date_p">
+                </div>
+                <label class="col-sm-3">Follow-Up Inspection Scheduled for:</label>
+                <div class="col-sm-3">
+                    <input class="form-control input-sm" type="text" id="follow">
+                </div>
+            </div><br>
+        <hr>
+        <div class="form-group col-md-12" id="impact_">
+            <label ><b><u>IMPACTS</u></b></label>
+            <textarea class="form-control" id="impact" rows="3"></textarea>
+            <label class="radio-inline"><input type="radio" name="optradio2" id="i1" value="cost">COST $</label>
+            <label class="radio-inline"><input type="radio" name="optradio2" id="i2" value="sch">SCHEDULE</label>
+            <label class="radio-inline"><input type="radio" name="optradi2" id="i3" value="other">OTHER</label>
+        </div>
+        <hr>
+
+        <div class="form-group col-md-12">
+            <label class="col-sm-3">SIGNATURE</label>
+            <div class="col-sm-3">
+                <input class="form-control input-sm" type="text" placeholder="NAME - TITLE" id="sign">
+            </div>
+            <label class="col-sm-3">Date</label>
+            <input type="date" id="date_pic">
+        </div>
+        <hr>
+        <div class="form-group col-md-12" >
+        <!-- -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-5">W-T Superintendent</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="superint">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">W-T Contract Lead</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="lead">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">Vendor</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="vender" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">2nd Tier</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="two_tier">
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-5">CNSE LEAD</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="lead_cnse">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">Cc:</label>
+                    <div class="col-sm-6">
+                        <label>(W-T) E. HEALY</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">Cc:</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="cc">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">Original to</label>
+                    <div class="col-sm-6">
+                        <label>QC FILE</label>
+                    </div>
+                </div>
+            </div><br><br>
+            <!-- -->
+        </div><br /><br/>
+        <hr>
+        <div class="form-group text-center col-md-12">
+            <button class="btn btn-primary" id="update">UPDATE</button>
+
+        </div>
+    </div>
+</div>
+
+
+</html>
