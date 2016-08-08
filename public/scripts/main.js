@@ -23,6 +23,40 @@ urn_x='hello';file_name_x='jj';
     });
 };
 */
+$('#c_p').click(function(event){
+    event.preventDefault();
+    var old_pass=document.getElementById('o_wt').value;
+    var new_pass=document.getElementById('n_wt').value;
+    post={o:old_pass,n:new_pass};
+
+    $.post('/change_pass',post,function(data){
+        if(data=='success'){
+            alert('Password Changed');
+            location.reload();
+        }else{
+            alert('Please try after sometime');
+        }
+    })
+})
+$('#register').click(function(){
+
+    var pass=document.getElementById('password').value;
+    var emailid=document.getElementById('email').value;
+    var user=document.getElementById('username').value;
+    post={p:pass,e:emailid,u:user};
+    $.post('/sign_up',post,function(data){
+       if(data=='success'){
+           alert('Registration Succesfull. PLease contact Tyler Davis at tyer.davis@whiting-turner.com to approve you login credentials');
+           location.reload();
+       }
+       else{
+           alert(data);
+       }
+
+
+    });
+    //alert(pass+emailid+user);
+});//signup click event
 $('#out_out').click(function(event){
     event.preventDefault();
     var txt;

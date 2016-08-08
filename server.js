@@ -2,7 +2,7 @@
  * Created by Jeevjyot on 7/8/16.
  */
 var mysql= require('mysql');
-fs=require('fs');
+var fs=require('fs');
 var favicon = require('serve-favicon');
 var api = require('./routes/api');
 var connect = require('connect');
@@ -12,10 +12,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('cookie-session');
 var uuid=require('uuid');
+var formidable=require('formidable');
+var path = require('path');
 var app=express();
+var LocalStorage = require('node-localstorage').LocalStorage;
 var unique_id;
 var admin=0;
 var per_email;
+localStorage = new LocalStorage('./scratch');
 app.use(bodyParser.urlencoded({ extended: false })); //for retrieving the data from the javascript file.
 
 // Cookie parsing needed for sessions
@@ -52,11 +56,80 @@ app.set('port', process.env.PORT);
 var connection = mysql.createConnection({
     host : 'localhost',
     user :  'root',
-    password :'root',
+    password :'',
     database: 'whiting_turner',
-    port: '3306 ',
+    port: '3307',
+});
+//file upload function
+//registration and sign up function
+
+app.post('/sign_up',function(req,res){
+
+    var email_id=req.body.e;
+    var user_name=req.body.u;
+    var password=req.body.p;
+    var hashed_pass=bcrypt.hashSync(password);
+    var query="INSERT into register_user SET ?";
+    var post={email:email_id,username:user_name,password:password,hash_p:hashed_pass};
+
+    connection.query(query,post,function(err,rows,fields){
+        if(!err){
+            res.send('success')
+        }
+        else{
+            res.send('error');
+            console.log(err);
+        }
+    })
+
 });
 
+app.get('/approve_list',function(req,res){
+
+    var query='SELECT * from register_user';
+
+    connection.query(query,function(err,rows,field){
+
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(rows);
+        }
+    });
+})
+app.post('/upload', function(req, res){
+
+    // create an incoming form object
+    var form = new formidable.IncomingForm();
+
+    // specify that we want to allow the user to upload multiple files in a single request
+    form.multiples = true;
+
+    // store all uploads in the /uploads directory
+    form.uploadDir = path.join(__dirname, '/uploads');
+
+    // every time a file has been uploaded successfully,
+    // rename it to it's orignal name
+    form.on('file', function(field, file) {
+        fs.rename(file.path, path.join(form.uploadDir, file.name));
+        console.log(__dirname+'/uploads/'+file.name);
+    });
+
+    // log any errors that occur
+    form.on('error', function(err) {
+        console.log('An error has occured: \n' + err);
+    });
+
+    // once all the files have been uploaded, send a response to the client
+    form.on('end', function() {
+        res.end('success');
+    });
+
+    // parse the incoming request containing the form data
+    form.parse(req);
+
+});
 //Send data from lmvmodels to populate the Drop down list in index1.html (label and urn)
 app.get( '/lmvmodels',function(req,res){
     var query="select label,urn from per_table where email = ?";
@@ -97,6 +170,60 @@ app.post('/insert',function(req,res){
     });
    // console.log("R = " + r);
     //res.send(r);
+});
+
+
+//INSERTING into form fields
+app.post('/qc_form',function(req,res){
+
+    var qc=req.body.qc; var init=req.body.ini; var p_b=req.body.p_b;
+    var con=req.body.contract;var lo=req.body.location;var sub=req.body.subconrtact;
+    var s_t=req.body.sub_tier; var inspect=req.body.inspection;var d_d=req.body.design_date;
+    var spec=req.body._spe; var draw=req.body._drawing; var submit=req.body.submit;
+    var mat=req.body.mat; var note=req.body.notes;
+    var x=req.body.xr; var y=req.body.yr; var z=req.body.zr;
+    var rec=req.body.re; var d_p=req.body.d_p; var follow=req.body.follow;
+    var im=req.body.im; var sign=req.body.sign;
+    var d=req.body.d; var s=req.body.super; var l=req.body.lead; var v=req.body.vendor; var cn=req.body.cnse;
+    var c=req.body.cc;
+    var z1=req.body.z1;var z2=req.body.z2;
+
+
+    var basedate = new Date();
+    var post={qc_number:qc,name_ini:init,building:p_b,c_n:con,location:lo,sub_contract:sub,
+              sub_t_contract:s_t,inspection_date:inspect, design_package:d_d,specification:spec,
+              drawing:draw,submittal:submit, material:mat,notes_comment:note, Picture:x,inspection_compliance:y,
+               recommend:rec,perform_date:d_p,inspection_schedule:follow,impacts:im,
+              cost:z,schedule:z1,other:z2,date:d,sign:sign,wt_superint:s,wt_contract_lead:l,vendor:v,cc:c,
+              cnse_lead:cn,last_updated:basedate,other:z2};
+
+              connection.query('INSERT into form_fields SET ?',post,function(err,rows,fields){
+                  if(!err){
+                      res.send('success');
+                  }else{
+                      res.send('error');
+                  }
+              })
+});//inserting QC form data in the table
+
+//GEtting data from the form fields
+
+app.get('/get_qs',function(req,res){
+
+    var project_name=req.body.p_n;
+    var query="SELECT * from form_fields where project_name = ?";
+
+    connection.query('query',function(err,rows,fields){
+
+        if(!err){
+            res.send(rows);
+        }
+        else{
+            res.send('error');
+        }
+
+    });
+
 });
 //function to insert uploaded model into database(lmvmodeloption)
 app.post('/endpoint',function(req,res){
@@ -230,12 +357,98 @@ function update_table(req,res){
     connection.query('update user_login set username = ?,email=?,password=?,admin=?,d_password=? where email=?',[username,email,password,admin,d_password,email_or],function(err,rows,fields){
         if(err){
             console.log('Error');
+            console.log(err);
         }
         else{
-            res.send('Success');
+            res.send('success');
         }
     })
 }
+//*******************************************************
+//*******************************************************
+app.post('/insert_project',function(req,res){
+   var project_name=req.body.name_p;
+    var query="Insert into qc_form SET  ?";
+    var post={project_name:project_name};
+    connection.query(query,post,function(err,rows,fields){
+        if(err){
+            console.log(err);
+        }else{
+            res.send('success');
+        }
+    })
+
+});
+app.get('/get_projects',function(req,res){
+
+    var query="select * from qc_form";
+
+    connection.query(query,function(err,rows,field){
+        if(err){
+            console.log(err);
+            res.send('error');
+        }
+        else {
+            res.send(rows);
+        }
+    })
+});// get projects
+
+app.post('/get_pictures',function(req,res){
+
+    //we need of the project and qc number to get the path of the images and fiel name too
+    var id=req.body.i;
+    var qc=req.body.q;
+    var query='SELECT * from qc_picture where project = ? and qc_number = ?';
+    connection.query(query,[id,qc],function(err,rows,field){
+
+            if(err){
+                console.log(err);
+                res.send('error');
+            }else{
+                res.send('success');
+            }
+    });
+});//get pictures depending upon the log
+
+app.post('/get_logs',function(req,res){
+
+    var query="SELECT * from form_fields where ID =?";
+    var id=req.body.i;
+
+    connection.query(query,[id],function(err,rows,fields){
+
+        if(err){
+            console.log(err);
+            res.send(err);
+        }else{
+            console.log(rows);
+        }
+    });
+});
+
+//*******************************************************
+//*******************************************************
+//function to change the password
+
+app.post('/change_pass',function(req,res){
+     var old=req.body.o;
+     var new_p=req.body.n;
+    var h_p=bcrypt.hashSync(new_p);
+    var query='Update user_login set password = ? , d_password = ? where email =?'
+    var email_id=localStorage.getItem('email_id');
+    console.log(email_id);
+    connection.query(query,[h_p,new_p,email_id],function(err,rows,fields){
+
+        if(err) {
+            console.log(err);
+        }else{
+
+            res.send('success');
+        }
+
+    })
+})
 //app get to get the models
 app.post('/get_models',get_models);
 
@@ -360,6 +573,7 @@ app.post('/login',function(req,res){
 
                         });*/
                      admin=rows[0].admin;
+                    localStorage.setItem('email_id',u_wt);
                     req.session.user_wt=req.body.user_w;
                     console.log('Success');
                     res.send({result: "success", ad: admin});
@@ -420,7 +634,9 @@ var server = app.listen(app.get('port'), function() {
         if(err) {
             console.log('error connecting to the database' + err.stack);
             return;
-        }else{console.log('connected to database');}
+        }else{console.log('connected to database');
+           console.log(__dirname);
+        }
     });
 
     //query Db to check the database

@@ -17,7 +17,36 @@ $(document).ready(function(){
         alert('you clicked me');
         make_editable();
     }); */
+    $.get('/approve_list',function(data){
+        var results=document.getElementById('response2');
 
+        for(var i=0;i<data.length;i++){
+            results.innerHTML +="<tr><td contenteditable='false'>"+data[i].username+"</td><td>"+data[i].email+"</td><td contenteditable='false'>"+data[i].password+"</td><td><button class='approve btn btn-warning'>Approve</td></tr>"
+
+        }
+
+
+    });
+    //approve butting function
+    $(document).on('click', '#response2 .approve',function(){
+
+        var currentRow=$(this).closest("tr");
+        var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+        var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+        var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+        var data=col1+"\n"+col2+"\n"+col3+"\n";
+        alert(data);
+
+        $.post('/transfer',{c1:col1,c2:col2,c3:col3},function(data){
+            if(data=='success'){
+                alert('User updated');
+            }
+            else{
+                alert('Please try after sometime');
+            }
+        });
+
+    });
     $(document).on('click', '#response1 .editbtn', function(){
         var currentTD = $(this).parents('tr').find('td');
         if ($(this).html() == 'Edit') {
@@ -49,7 +78,7 @@ $(document).ready(function(){
                else{
                    alert('Please try after sometime');
                }
-           })
+           });
         }
         $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
     });

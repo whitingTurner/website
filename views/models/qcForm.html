@@ -16,7 +16,22 @@
     <script src="Bootstrap/js/bootstrap.js"></script>
     <script src="Bootstrap/js/bootstrap.min.js"></script>
     <script src="../../public/scripts/qcForm.js"></script>
+    <style>
+        #upload-input{
+            display:none;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var validator=$('#qc_form').validate();
+            validator.element('#subc');
+            validator.element('#iDate');
+            validator.element('#optradio2');
+        })
 
+    </script>
     <!-- Bootstrap CDN -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -46,11 +61,41 @@
         </div>
     </div>
 </nav>
-<!-- Main Body Starts -->
-<div class="container" style="margin-top: 50px" >
-    <h2 class="text-center">Job 014470. 100 Bass Biolody Building Project</h2>
-    <div class="row" style="padding-top: 10px">
-        <div class="col-md-6">
+<form id="qc_form">
+    <div class="container" style="margin-top: 60px" >
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="project_qc">Select Project</label>
+                    <select class="form-control" id="project_qc">
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="log">Select Log</label>
+                    <select class="form-control" id="log">
+                        <option>1</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4" style="display: none">
+                <div class="form-group">
+                    <label for="picture">Select Picture</label>
+                    <select class="form-control" id="picture">
+                        <option value="10">will load from the database</option>
+                        <option value="10">Checking</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="text-center"><Job 014470. 100 Bass Biolody Building Project></h2>
+        <div class="row" style="padding-top: 10px">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="QCN" class="col-sm-4">QC #</label>
                     <div class="col-sm-6">
@@ -75,83 +120,85 @@
                         <input class="form-control input-sm" id="project"  type="text">
                     </div>
                 </div>
-            <div class="form-group">
-                <label for="QCN" class="col-sm-4">Contract Number</label>
-                <div class="col-sm-6">
-                    <input class="form-control input-sm" id="cn" type="text">
+                <div class="form-group">
+                    <label for="QCN" class="col-sm-4">Contract Number</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" id="cn" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4">Sub Contractor</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" id="subc" type="text" required>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-4">Sub Contractor</label>
-                <div class="col-sm-6">
-                    <input class="form-control input-sm" id="subc" type="text" >
+            <!-- -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="col-sm-5">Location (Column)</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" id="loc" type="text" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">Design Package</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="dpack">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">Sub-Tier Subcontractor</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="sub-tier">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">Specification</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="specification">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">Drawing</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="drawing">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-5">Submittal</label>
+                    <div class="col-sm-6">
+                        <input class="form-control input-sm" type="text" id="submital">
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- -->
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="col-sm-5">Location (Column)</label>
-                <div class="col-sm-6">
-                    <input class="form-control input-sm" id="loc" type="text" >
+        <hr >
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label ><b><u>MATERIAL</u></b></label>
+                <textarea class="form-control" id="material" rows="3"></textarea>
+            </div>
+            <div class="form-group col-md-12">
+                <label ><b><u>NOTES & COMMENTS</u></b></label>
+                <textarea class="form-control" id="notes" rows="3"></textarea>
+                <div class="pictures">
+                    <span>Pictures Taken</span>&nbsp;
+                    <label class="radio-inline"><input type="radio" name="optradio" id="c1" value="yea">YES</label>
+                    <label class="radio-inline"><input type="radio" name="optradio" id="c2" value="nope">NO</label>
+                    <div id="file_name"></div>
                 </div>
+                <input id="upload-input" type="file" name="uploads[]" multiple="multiple">
             </div>
-            <div class="form-group">
-                <label class="col-sm-5">Design Package</label>
-                <div class="col-sm-6">
-                    <input class="form-control input-sm" type="text" id="dpack">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-5">Sub-Tier Subcontractor</label>
-                <div class="col-sm-6">
-                    <input class="form-control input-sm" type="text" id="sub-tier">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-5">Specification</label>
-                <div class="col-sm-6">
-                    <input class="form-control input-sm" type="text" id="specification">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-5">Drawing</label>
-                <div class="col-sm-6">
-                    <input class="form-control input-sm" type="text" id="drawing">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-5">Submittal</label>
-                <div class="col-sm-6">
-                    <input class="form-control input-sm" type="text" id="submital">
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr >
-    <div class="row">
-        <div class="form-group col-md-12">
-            <label ><b><u>MATERIAL</u></b></label>
-            <textarea class="form-control" id="material" rows="3"></textarea>
-        </div>
-        <div class="form-group col-md-12">
-            <label ><b><u>NOTES & COMMENTS</u></b></label>
-            <textarea class="form-control" id="notes" rows="3"></textarea>
-            <div class="pictures">
-                <span>Pictures Taken</span>&nbsp;
-                <label class="radio-inline"><input type="radio" name="optradio" id="c1" value="yea">YES</label>
-                <label class="radio-inline"><input type="radio" name="optradio" id="c2" value="nope">NO</label>
-            </div>
-        </div>
-        <hr>
-        <div class="form-group col-md-12 rad" id="radio_one">
-            <span>Through this inspection, the item was found to be apparently in compliance with the drawings and Specifications</span>
+            <hr>
+            <div class="form-group col-md-12 rad" id="radio_one">
+                <span>Through this inspection, the item was found to be apparently in compliance with the drawings and Specifications</span>
 
                 <label class="radio-inline"><input type="radio" name="optradio1" id="r1" value="yes">YES</label>
                 <label class="radio-inline"><input type="radio" name="optradio1" id="r2" value="no">NO</label>
 
-        </div>
-        <hr>
+            </div>
+            <hr>
 
             <div class="form-group col-md-12">
                 <label ><b><u>FURTHER ACTION RECOMMNENDED: (corrective measures required)</u></b></label>
@@ -165,89 +212,92 @@
                     <input class="form-control input-sm" type="text" id="follow">
                 </div>
             </div><br>
-        <hr>
-        <div class="form-group col-md-12" id="impact_">
-            <label ><b><u>IMPACTS</u></b></label>
-            <textarea class="form-control" id="impact" rows="3"></textarea>
-            <label class="radio-inline"><input type="radio" name="optradio2" id="i1" value="cost">COST $</label>
-            <label class="radio-inline"><input type="radio" name="optradio2" id="i2" value="sch">SCHEDULE</label>
-            <label class="radio-inline"><input type="radio" name="optradi2" id="i3" value="other">OTHER</label>
-        </div>
-        <hr>
-
-        <div class="form-group col-md-12">
-            <label class="col-sm-3">SIGNATURE</label>
-            <div class="col-sm-3">
-                <input class="form-control input-sm" type="text" placeholder="NAME - TITLE" id="sign">
+            <hr>
+            <div class="form-group col-md-12" id="impact_">
+                <label ><b><u>IMPACTS</u></b></label>
+                <textarea class="form-control" id="impact" rows="3"></textarea>
+                <label class="radio-inline"><input type="radio" name="optradio2" id="i1" value="cost">COST $</label>
+                <label class="radio-inline"><input type="radio" name="optradio2" id="i2" value="sch">SCHEDULE</label>
+                <label class="radio-inline"><input type="radio" name="optradi2" id="i3" value="other">OTHER</label>
             </div>
-            <label class="col-sm-3">Date</label>
-            <input type="date" id="date_pic">
-        </div>
-        <hr>
-        <div class="form-group col-md-12" >
-        <!-- -->
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label class="col-sm-5">W-T Superintendent</label>
-                    <div class="col-sm-6">
-                        <input class="form-control input-sm" type="text" id="superint">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-5">W-T Contract Lead</label>
-                    <div class="col-sm-6">
-                        <input class="form-control input-sm" type="text" id="lead">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-5">Vendor</label>
-                    <div class="col-sm-6">
-                        <input class="form-control input-sm" type="text" id="vender" >
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-5">2nd Tier</label>
-                    <div class="col-sm-6">
-                        <input class="form-control input-sm" type="text" id="two_tier">
-                    </div>
-                </div>
-            </div><br>
+            <hr>
 
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label class="col-sm-5">CNSE LEAD</label>
-                    <div class="col-sm-6">
-                        <input class="form-control input-sm" type="text" id="lead_cnse">
-                    </div>
+            <div class="form-group col-md-12">
+                <label class="col-sm-3">SIGNATURE</label>
+                <div class="col-sm-3">
+                    <input class="form-control input-sm" type="text" placeholder="NAME - TITLE" id="sign">
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-5">Cc:</label>
-                    <div class="col-sm-6">
-                        <label>(W-T) E. HEALY</label>
+                <label class="col-sm-3">Date</label>
+                <input type="date" id="date_pic">
+            </div>
+            <hr>
+            <div class="form-group col-md-12" >
+                <!-- -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-sm-5">W-T Superintendent</label>
+                        <div class="col-sm-6">
+                            <input class="form-control input-sm" type="text" id="superint">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-5">Cc:</label>
-                    <div class="col-sm-6">
-                        <input class="form-control input-sm" type="text" id="cc">
+                    <div class="form-group">
+                        <label class="col-sm-5">W-T Contract Lead</label>
+                        <div class="col-sm-6">
+                            <input class="form-control input-sm" type="text" id="lead">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-5">Original to</label>
-                    <div class="col-sm-6">
-                        <label>QC FILE</label>
+                    <div class="form-group">
+                        <label class="col-sm-5">Vendor</label>
+                        <div class="col-sm-6">
+                            <input class="form-control input-sm" type="text" id="vender" >
+                        </div>
                     </div>
-                </div>
-            </div><br><br>
-            <!-- -->
-        </div><br /><br/>
-        <hr>
-        <div class="form-group text-center col-md-12">
-            <button class="btn btn-primary" id="update">UPDATE</button>
+                    <div class="form-group">
+                        <label class="col-sm-5">2nd Tier</label>
+                        <div class="col-sm-6">
+                            <input class="form-control input-sm" type="text" id="two_tier">
+                        </div>
+                    </div>
+                </div><br>
 
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="col-sm-5">CNSE LEAD</label>
+                        <div class="col-sm-6">
+                            <input class="form-control input-sm" type="text" id="lead_cnse">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-5">Cc:</label>
+                        <div class="col-sm-6">
+                            <label>(W-T) E. HEALY</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-5">Cc:</label>
+                        <div class="col-sm-6">
+                            <input class="form-control input-sm" type="text" id="cc">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-5">Original to</label>
+                        <div class="col-sm-6">
+                            <label>QC FILE</label>
+                        </div>
+                    </div>
+                </div><br><br>
+                <!-- -->
+            </div><br /><br/>
+            <hr>
+            <div class="form-group text-center col-md-12">
+                <button class="btn btn-primary" id="update">UPDATE</button>
+
+            </div>
         </div>
     </div>
-</div>
+</form>
+
+<!-- Main Body Starts -->
 
 
 </html>
