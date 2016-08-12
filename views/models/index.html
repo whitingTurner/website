@@ -63,6 +63,8 @@
 					$('#uploadx').hide();
 					$('#modelsx').hide();
 					$('#log_in').show();
+					$('#new_user').show();
+					$('#signup').show();
 					//alert('Session is not set');
 
 				}
@@ -79,12 +81,8 @@
 					$('#modelsx').show ();
 					$('#log_in').hide();
 					$('#out_index').show();
-					if(data =='a'){
-						$('#admin').show();
-					}
-					else{
-						$('#admin').hide();
-					}
+					$('#new_user').hide();
+					$('#signup').hide();
 				}
 
 			});
@@ -122,7 +120,7 @@
 <div class="container-fluid text-center pagination-centered " style="margin-top: 20%"  >
 
 	<h1 class="display-1">Whiting-Turner Model Viewer</h1><br/><br />
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="log_in">Log in</button>&nbsp;&nbsp;<span><b>New User?</b><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal" id="signup">Sign up</button></span><br /> <br />
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="log_in">Log in</button>&nbsp;&nbsp;<span id="new_user"><b>New User?</b><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal" id="signup">Sign up</button></span><br /> <br />
 	<span><a href="/admin.html" id="uploadx">Upload Model</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
 	<span><a href="/index1.html" id="modelsx">View 3d Models</a></span><br /> <br />
 	<span><a href="/panel.html" id="admin">ADMIN PANEL</a></span><br /> <br />

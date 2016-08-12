@@ -13,6 +13,9 @@ function make_editable(){
 //Ready function
 $(document).ready(function(){
 
+     fetch_user(); //fetches the row from the user_login
+
+
    /* $(".editbtn").click(function(){
         alert('you clicked me');
         make_editable();
@@ -35,16 +38,21 @@ $(document).ready(function(){
         var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
         var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
         var data=col1+"\n"+col2+"\n"+col3+"\n";
-        alert(data);
+        //alert(data);
 
         $.post('/transfer',{c1:col1,c2:col2,c3:col3},function(data){
-            if(data=='success'){
+            if(data=='success2'){
                 alert('User updated');
+                //$("#response1").find("tr:not(:first)").remove();
             }
             else{
                 alert('Please try after sometime');
             }
         });
+        $(this).closest('tr').remove();
+        $("#response1").find("tr:not(:first)").remove();
+        $("#response").find("tr:not(:first)").remove();
+        fetch_user();
 
     });
     $(document).on('click', '#response1 .editbtn', function(){
@@ -98,31 +106,13 @@ $(document).ready(function(){
             }
         });
         $(this).closest('tr').remove();
-       
+        $("#response1").find("tr:not(:first)").remove();
+        $("#response").find("tr:not(:first)").remove();
+        fetch_user();
     })
 
     
-    $.get('/online',function(data){
-    var del='DELETE'
-            var results=document.getElementById('response');
-            var result=document.getElementById('response1');
-        for(var i=0;i<data.length;i++){
-            results.innerHTML += "<tr><td>"+data[i].username+"</td><td>"+data[i].last_logged_in+"</td><td>"+data[i].logged_in+"</td><td>"+data[i].admin+"</td><td><button class='editbtn1 btn btn-danger'>"+del+"</button> </td></tr>";
-            
-            result.innerHTML +="<tr><td contenteditable='false'>"+data[i].username+"</td><td>"+data[i].email+"</td><td contenteditable='false'>"+data[i].d_password+"</td><td contenteditable='false'>"+data[i].admin+"</td><td><button class='editbtn btn btn-warning'>Edit</td></tr>"
-        }//end of for loop
-        //Loading the users form the databse
-        // add the new options for models
-        var sel = $("#user_select");
-        // alert(_lmvModelOptions[0].label);
-        $.each(data, function(i, item) {
-            sel.append($("<option>", {
-                value: i,
-                text : data[i].email
-            }));
-        });
 
-    });//end of get function
 
     $.get('/getModels',function(data){
         var res= $('#models');
@@ -158,7 +148,10 @@ $(document).ready(function(){
             else{
                 alert('Error, Please try again in sometime');
             }
-        })
+        });
+        $("#response1").find("tr:not(:first)").remove();
+        $("#response").find("tr:not(:first)").remove();
+        fetch_user();
 
     });//register function end
 
@@ -270,4 +263,66 @@ $(document).ready(function(){
             });
         })
     });
+
+
+    $.get('/get_projects',function(data){
+
+        var selector=document.getElementById('qc_form');
+    //alert(data);
+        for(var i=0;i<data.length;i++){
+            //alert(data[i].ID);
+            selector.innerHTML += "<tr><td>"+ data[i].ID +"</td><td>"+ data[i].project_name +"</td><td><button class='del_qc btn btn-danger'>Delete</button> </td></tr>";
+
+        }//end of for loop
+
+
+    });//function ends over here
+
+    //delete button for removing the QC project from the table
+    $(document).on('click', '#qc_form .del_qc',function(){
+
+        var currentRow=$(this).closest("tr");
+        var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+        var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+
+        //var data=col1+"\n"+col2+"\n"+col3+"\n";
+        alert(col1+col2);
+
+        $.post('/delete_qc_entry',{c1:col1,c2:col2},function(data){
+            if(data=='success'){
+
+                alert('Project deleted from the Qc table');
+
+            }
+            else{
+                alert('Please try after sometime');
+            }
+        });
+        $(this).closest('tr').remove();
+    });
+
 });//end of ready function
+
+function fetch_user(){
+    $.get('/online',function(data){
+        var del='DELETE'
+        var results=document.getElementById('response');
+        var result=document.getElementById('response1');
+        for(var i=0;i<data.length;i++){
+            results.innerHTML += "<tr><td>"+data[i].username+"</td><td>"+data[i].last_logged_in+"</td><td>"+data[i].logged_in+"</td><td>"+data[i].admin+"</td><td><button class='editbtn1 btn btn-danger'>"+del+"</button> </td></tr>";
+
+            result.innerHTML +="<tr><td contenteditable='false'>"+data[i].username+"</td><td>"+data[i].email+"</td><td contenteditable='false'>"+data[i].d_password+"</td><td contenteditable='false'>"+data[i].admin+"</td><td><button class='editbtn btn btn-warning'>Edit</td></tr>"
+        }//end of for loop
+        //Loading the users form the databse
+        // add the new options for models
+        var sel = $("#user_select");
+            sel.empty();
+        $.each(data, function(i, item) {
+            sel.append($("<option>", {
+                value: i,
+                text : data[i].email
+            }));
+        });
+
+    });//end of get function
+}

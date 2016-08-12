@@ -16,6 +16,9 @@
     <script src="Bootstrap/js/bootstrap.js"></script>
     <script src="Bootstrap/js/bootstrap.min.js"></script>
     <script src="../../public/scripts/qcForm.js"></script>
+    <script src="../../public/styles/ExcelPlus/2.3/excelplus-2.3.min.js"></script>
+    <script src="../../public/styles/xlsx/dist/xlsx.core.min.js"></script>
+    <!-- Javascript Form to the Excel Sheet -->
     <style>
         #upload-input{
             display:none;
@@ -23,12 +26,13 @@
     </style>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
-    <script type="text/javascript">
+    <<script type="text/javascript">
         $(document).ready(function(){
             var validator=$('#qc_form').validate();
             validator.element('#subc');
             validator.element('#iDate');
             validator.element('#optradio2');
+            validator.element('#qc_number');
         })
 
     </script>
@@ -61,43 +65,50 @@
         </div>
     </div>
 </nav>
-<form id="qc_form">
-    <div class="container" style="margin-top: 60px" >
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="project_qc">Select Project</label>
-                    <select class="form-control" id="project_qc">
-
-                    </select>
-                </div>
+<div class="container" style="margin-top: 60px" >
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="project_qc">Projects</label>
+                <select class="form-control" id="project_qc">
+                <option>Select Project</option>
+                </select>
             </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label for="log">Select Log</label>
-                    <select class="form-control" id="log">
-                        <option>1</option>
-
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4" style="display: none">
-                <div class="form-group">
-                    <label for="picture">Select Picture</label>
-                    <select class="form-control" id="picture">
-                        <option value="10">will load from the database</option>
-                        <option value="10">Checking</option>
-                    </select>
-                </div>
-            </div>
-
         </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="log">Log</label>
+                <select class="form-control" id="log">
+                    <option>Select Log</option>
+                </select>
+                <a href="#" id="new_log">Add New Log</a>
+            </div>
+        </div>
+        <div class="col-md-3" style="">
+            <div class="form-group">
+                <label for="picture">Pictures</label>
+                <select class="form-control" id="picture">
+                    <option value="10">Select Pictures</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="">
+            <div class="form-group">
+                <a href="#" id="current" class="export">Export Current Log</a><br />
+                <a href="#" id="all" class="export">Export All Log</a>
+            </div>
+        </div>
+
+    </div>
+<form id="qc_form">
+
 
         <h2 class="text-center"><Job 014470. 100 Bass Biolody Building Project></h2>
         <div class="row" style="padding-top: 10px">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="QCN" class="col-sm-4">QC #</label>
+                    <label for="qc_number" class="col-sm-4">QC #</label>
                     <div class="col-sm-6">
                         <input class="form-control input-sm" type="text" id="qc_number" required>
                     </div>
@@ -216,9 +227,9 @@
             <div class="form-group col-md-12" id="impact_">
                 <label ><b><u>IMPACTS</u></b></label>
                 <textarea class="form-control" id="impact" rows="3"></textarea>
-                <label class="radio-inline"><input type="radio" name="optradio2" id="i1" value="cost">COST $</label>
-                <label class="radio-inline"><input type="radio" name="optradio2" id="i2" value="sch">SCHEDULE</label>
-                <label class="radio-inline"><input type="radio" name="optradi2" id="i3" value="other">OTHER</label>
+                <label class="checkbox-inline"><input type="checkbox" name="optradio2" id="i1" value="cost">COST </label><div id="c">$</div>
+                <label class="checkbox-inline"><input type="checkbox" name="optradio2" id="i2" value="sch">SCHEDULE</label>
+                <label class="checkbox-inline"><input type="checkbox" name="optradio2" id="i3" value="other">OTHER</label>
             </div>
             <hr>
 
@@ -290,8 +301,8 @@
             </div><br /><br/>
             <hr>
             <div class="form-group text-center col-md-12">
-                <button class="btn btn-primary" id="update">UPDATE</button>
 
+                <input type="submit" name="login" class="btn btn-primary" value="Update" id="update">
             </div>
         </div>
     </div>

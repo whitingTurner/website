@@ -355,6 +355,8 @@ jQuery(document).ready(function($) {
                                // alert(response.file.name);
                                 urn_x=viewable.urn;
                                 file_name_x=response.file.name;
+                                localStorage.setItem('urn',urn_x);
+                                localStorage.setItem('label',file_name_x);
                                 flag=1;
                                 //insert_db(viewable.urn,response.file.name);
                             });

@@ -66,12 +66,21 @@ function loadModelMenuOptions() {
         // add the new options for models
     var sel = $("#pu_modelToLoad");
    // alert(_lmvModelOptions[0].label);
-    $.each(_lmvModelOptions, function(i, item) {
+    /*$.each(_lmvModelOptions, function(i, item) {
         sel.append($("<option>", {
             value: i,
             text : item.label
         }));
-    });
+        //alert(item.label)
+    });*/
+    for(var x=0;x<_lmvModelOptions.length;x++){
+
+        sel.append($("<option>", {
+            value:x,
+            text : _lmvModelOptions[x].label
+        }));
+        //alert('I am done');
+    }
 
     $.each(_lmvPlantModelOptions, function (i, item) {
         sel.append($("<option>", {
@@ -643,6 +652,9 @@ function read_lmvmodels(){
         for(var i=0;i<data.length;i++){
             _lmvModelOptions.push({label: data[i].label, urn: data[i].urn});
         }
+        var urn=localStorage.getItem('urn');
+        console.log(urn);
+
         loadInitialModel(data[0].urn);
     })
 
@@ -652,11 +664,12 @@ function read_lmvmodels(){
 function loadInitialModel(data) {
 
     console.log("onload: loadInitialModel in LoadModel.js");
+    var name=localStorage.getItem('label');
 
     dbgPrintLmvVersion(); 
     //read_lmvmodels();
     loadModelMenuOptions();                  // populate the list of available models for the user
-    
+
     var options = {};
     options.env = _viewerEnv;                // AutodeskProduction, AutodeskStaging, or AutodeskDevelopment (set in global var in this project)
     options.getAccessToken = getAccessToken;
