@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd874ef9-78ba-46da-89cf-ffd8264cfa90" name="Default" comment="">
+    <list default="true" id="cd874ef9-78ba-46da-89cf-ffd8264cfa90" name="Default" comment="quality control form">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/captcha/fonts/Anorexia.ttf" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/captcha/images/button.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/cinema/plan_9.jpg" />
@@ -41,8 +41,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/milk/milk.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/milk/right_white.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/tinymce/themes/simple/img/icons.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/README.md" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/ajaxSubmit-integration-demo.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/bootstrap/index.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/captcha/captcha.js" />
@@ -90,272 +88,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/tinymce/themes/simple/skins/default/ui.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/tinymce/tiny_mce.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/demo/tinymce4/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/additional-methods.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/additional-methods.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/jquery.validate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/jquery.validate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_bg.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_bn_BD.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_bn_BD.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ca.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_cs.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_da.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_de.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_el.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_es.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_es_AR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_es_AR.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_es_PE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_es_PE.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_et.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_eu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_eu.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_fa.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_fi.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_fr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ge.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_gl.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_he.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_hr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_hu.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_hy_AM.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_hy_AM.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_id.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_is.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_is.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_it.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ja.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ka.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ka.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_kk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_kk.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ko.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_lt.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_lv.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_mk.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_my.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_my.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_nl.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_no.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_pl.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_pt_BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_pt_BR.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_pt_PT.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_pt_PT.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ro.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_ru.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_si.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_sk.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_sl.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_sr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_sr_lat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_sr_lat.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_sv.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_th.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_tj.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_tj.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_tr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_uk.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_vi.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_zh.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_zh_TW.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/messages_zh_TW.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/methods_de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/methods_de.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/methods_es_CL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/methods_es_CL.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/methods_fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/methods_fi.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/methods_nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/methods_nl.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/methods_pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/dist/localization/methods_pt.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/lib/jquery-1.11.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/lib/jquery-1.7.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/lib/jquery-1.8.3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/lib/jquery-1.9.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/lib/jquery.form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/lib/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/lib/jquery.mockjax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/lib/jquery.simulate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/lib/require.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/accept.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/additional.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/alphanumeric.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/bankaccountNL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/bankorgiroaccountNL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/bic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/cifES.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/cpfBR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/creditcard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/creditcardtypes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/currency.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/dateFA.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/dateITA.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/dateNL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/extension.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/giroaccountNL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/iban.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/integer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/ipv4.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/ipv6.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/lettersonly.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/letterswithbasicpunc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/mobileNL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/mobileUK.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/nieES.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/nifES.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/notEqualTo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/nowhitespace.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/pattern.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/phoneNL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/phoneUK.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/phoneUS.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/phonesUK.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/postalCodeCA.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/postalcodeBR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/postalcodeIT.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/postalcodeNL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/postcodeUK.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/require_from_group.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/skip_or_fill_minimum.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/statesUS.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/strippedminlength.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/time12h.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/url2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/vinUS.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/zipcodeUS.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/additional/ziprange.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/ajax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_bn_BD.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_es_AR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_es_PE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_eu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_ge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_hy_AM.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_is.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_ka.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_kk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_my.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_pt_BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_pt_PT.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_sr_lat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_tj.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/messages_zh_TW.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/methods_de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/methods_es_CL.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/methods_fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/methods_nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/src/localization/methods_pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/test/additional/creditcard.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/test/aria.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/test/error-placement.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/test/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/test/messages.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/test/methods.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/test/qunit/qunit.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/test/qunit/qunit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/test/rules.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/jquery-validation-1/test/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/styles/libs/adsk/lmvworker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/styles/libs/adsk/lmvworker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/styles/libs/adsk/three.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/styles/libs/adsk/viewer3D.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/styles/libs/adsk/viewer3D.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/LoadModel.js" afterPath="$PROJECT_DIR$/public/scripts/LoadModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/main.js" afterPath="$PROJECT_DIR$/public/scripts/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/panel.js" afterPath="$PROJECT_DIR$/public/scripts/panel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/qcForm.js" afterPath="$PROJECT_DIR$/public/scripts/qcForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/app.css" afterPath="$PROJECT_DIR$/public/styles/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scratch/email_id" afterPath="$PROJECT_DIR$/scratch/email_id" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/models/admin.html" afterPath="$PROJECT_DIR$/views/models/admin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/models/index.html" afterPath="$PROJECT_DIR$/views/models/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/models/index1.html" afterPath="$PROJECT_DIR$/views/models/index1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/models/panel.html" afterPath="$PROJECT_DIR$/views/models/panel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/models/qcForm.html" afterPath="$PROJECT_DIR$/views/models/qcForm.html" />
     </list>
     <ignored path="updated_lmv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -802,7 +535,7 @@
       <workItem from="1470868109364" duration="146000" />
       <workItem from="1470870329830" duration="47503000" />
       <workItem from="1471290511066" duration="7433000" />
-      <workItem from="1471362880225" duration="32488000" />
+      <workItem from="1471362880225" duration="32994000" />
     </task>
     <task id="LOCAL-00001" summary="almost updated website;added latest security features">
       <created>1468262557755</created>
@@ -853,11 +586,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470699353356</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="quality control form">
+      <created>1471550794739</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1471550794739</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269756000" />
+    <option name="totallyTimeSpent" value="270262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -915,6 +655,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="almost updated website" />
     <MESSAGE value="almost updated website;added latest security features" />
     <MESSAGE value="almost updated website;" />
