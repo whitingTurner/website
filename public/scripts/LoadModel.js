@@ -64,32 +64,47 @@ function blankOutReportPane() {
     // populate the popup menu with the available models to load (from the array above)
 function loadModelMenuOptions() {
         // add the new options for models
-    var sel = $("#pu_modelToLoad");
-   // alert(_lmvModelOptions[0].label);
-    /*$.each(_lmvModelOptions, function(i, item) {
-        sel.append($("<option>", {
-            value: i,
-            text : item.label
-        }));
-        //alert(item.label)
-    });*/
-    for(var x=0;x<_lmvModelOptions.length;x++){
 
-        sel.append($("<option>", {
-            value:x,
-            text : _lmvModelOptions[x].label
-        }));
-        //alert('I am done');
+    var project_name=localStorage.getItem('label');
+
+    var sel = $("#pu_modelToLoad");
+
+
+
+
+        // alert(_lmvModelOptions[0].label);
+        $.each(_lmvModelOptions, function(i, item) {
+            sel.append($("<option>", {
+                value: i,
+                text : item.label
+            }));//appends ends here
+           ;
+        })
+
+        $("#pu_modelToLoad option").each(function() {
+            if($(this).text() == project_name) {
+                $(this).attr('selected', 'selected');
+              //alert('hi');
+            }
+        });
+
+    var project_name=localStorage.getItem('label');
+
+    if(project_name == 'undefined' || project_name == null){
+        var select = document.getElementById("pu_modelToLoad");
+        select.options[1].selected = true;
+    }
+    else{
+
+        $.each(_lmvPlantModelOptions, function (i, item) {
+            sel.append($("<option>", {
+                value: i + _lmvModelOptions.length,
+                text: item.label
+            }));
+        });
     }
 
-    $.each(_lmvPlantModelOptions, function (i, item) {
-        sel.append($("<option>", {
-            value: i + _lmvModelOptions.length,
-            text: item.label
-        }));
-    });
-    var select = document.getElementById("pu_modelToLoad");
-    select.options[1].selected = true;
+
 
 }
 $('#out_out').click(function(event){
@@ -99,6 +114,7 @@ $('#out_out').click(function(event){
         $.get( "/logout1", function( data ){
             if(data=='log_out')
             {
+                localStorage.clear();
                 window.location="/";
             }
 
@@ -468,7 +484,7 @@ function initializeViewerSecondary(sel_changed_callback, geom_loaded_callback) {
 
     // load a specific document into the intialized viewer
 function loadDocument(urnStr) {
-    
+
     _loadedDocument = null; // reset to null if reloading
     _loadedSecondaryDocument = null;
 
@@ -509,6 +525,7 @@ function loadDocument(urnStr) {
         }
         else {
             console.log("WARNING: No 2D views found for secondary view, using additional 3D view");
+            alert('Warning: No 2d views found for secondary view, using additional 3D view');
             if (_views3D.length > 0)
                 loadView(_loadedDocument, _viewerSecondary, _views3D[0]);
         }
@@ -652,10 +669,17 @@ function read_lmvmodels(){
         for(var i=0;i<data.length;i++){
             _lmvModelOptions.push({label: data[i].label, urn: data[i].urn});
         }
-        var urn=localStorage.getItem('urn');
-        console.log(urn);
+        var urn='';
+        urn=localStorage.getItem('urn');
+       // console.log(urn);
+        if(urn =='undefined' || urn == null){
+            urn=data[0].urn
+        }
+        else {
+             urn=localStorage.getItem('urn');
+        }
 
-        loadInitialModel(data[0].urn);
+        loadInitialModel(urn);
     })
 
 }
@@ -678,4 +702,5 @@ function loadInitialModel(data) {
     Autodesk.Viewing.Initializer(options, function() {
         loadDocument(data);   // load first entry by default
     });
+
 }

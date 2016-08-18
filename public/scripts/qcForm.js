@@ -1,123 +1,147 @@
     /**
      * Created by Jeevjyot on 8/2/16.
      */
+    var   project_name='';
+    var cost='no value';
     $(document).ready(function() {
-
+    $('#qc_form').validate();
         load_projects();
         $('#qc_number').attr('required','required');
         $('#subc').attr('required','required');
         $('#iDate').attr('required','required');
         $('#update').click(function (event) {
-            event.preventDefault();
-            var project=$("#project_qc :selected").text(); // The text content of the selected option
-            var id=$("#project_qc").val();
-            //alert(project + id);
-            var qc_num = document.getElementById('qc_number').value == ''? 'no value' : document.getElementById('qc_number').value;
-            var init = document.getElementById('ini').value == ''? 'no value' : document.getElementById('ini').value;;
-            var project_b = document.getElementById('project').value == ''? 'no value' : document.getElementById('project').value;;
-            var contract = document.getElementById('cn').value == ''? 'no value' : document.getElementById('cn').value;;
-            var location = document.getElementById('loc').value == ''? 'no value' : document.getElementById('loc').value;;
-            var subcontractor = document.getElementById('subc').value == ''? 'no value' : document.getElementById('subc').value;;
-            var sub_tier = document.getElementById('sub-tier').value == ''? 'no value' : document.getElementById('sub-tier').value;;
-            var inspection = document.getElementById('iDate').value == ''? 'no value' : document.getElementById('iDate').value;;
-            var design_date = document.getElementById('dpack').value == ''? 'no value' : document.getElementById('dpack').value;;
-            var _specification = document.getElementById('specification').value == ''? 'no value' : document.getElementById('specification').value; ;
-            var _drawing = document.getElementById('drawing').value== ''? 'no value' : document.getElementById('drawing').value;;
-            var submittal = document.getElementById('submital').value == ''? 'no value' : document.getElementById('submital').value;
 
-            //text_area
+            if($('#qc_form').valid()){
 
-            var _material = document.getElementById('material').value == ''? 'no value' : document.getElementById('material').value;;
-            var _notes = document.getElementById('notes').value == ''? 'no value' : document.getElementById('notes').value;;
+                event.preventDefault();
+                var btn_text=$('#update').html();
 
-            //Picture radio box
-            var x = $('input[name=optradio]:checked').val(); //picture JS
-            alert(x);
-            var y =$('input[name=optradio1]:checked').val();// compliance
-            alert(y);
-            //write the code for the checkboxes here
-        var cost_;
-            if($("#i1").prop('checked') == true){
+                var project=$("#project_qc :selected").text(); // The text content of the selected option
+                var id=$("#project_qc").val();
+                var qc_log=$('#log :selected').text();
+                alert(qc_log);
+                //alert(project + id);
+                var qc_num = document.getElementById('qc_number').value == ''? 'no value' : document.getElementById('qc_number').value;
+                var init = document.getElementById('ini').value == ''? 'no value' : document.getElementById('ini').value;;
+                var project_b = document.getElementById('project').value == ''? 'no value' : document.getElementById('project').value;;
+                var contract = document.getElementById('cn').value == ''? 'no value' : document.getElementById('cn').value;;
+                var location = document.getElementById('loc').value == ''? 'no value' : document.getElementById('loc').value;;
+                var subcontractor = document.getElementById('subc').value == ''? 'no value' : document.getElementById('subc').value;;
+                var sub_tier = document.getElementById('sub-tier').value == ''? 'no value' : document.getElementById('sub-tier').value;;
+                var inspection = document.getElementById('iDate').value == ''? 'no value' : document.getElementById('iDate').value;;
+                var design_date = document.getElementById('dpack').value == ''? 'no value' : document.getElementById('dpack').value;;
+                var _specification = document.getElementById('specification').value == ''? 'no value' : document.getElementById('specification').value; ;
+                var _drawing = document.getElementById('drawing').value== ''? 'no value' : document.getElementById('drawing').value;;
+                var submittal = document.getElementById('submital').value == ''? 'no value' : document.getElementById('submital').value;
 
-                if(cost == null){
-                    cost_=0;
-                }else{
-                    cost_=cost;
+                //text_area
+
+                var _material = document.getElementById('material').value == ''? 'no value' : document.getElementById('material').value;;
+                var _notes = document.getElementById('notes').value == ''? 'no value' : document.getElementById('notes').value;;
+
+                //Picture radio box
+                var x = $('input[name=optradio]:checked').val(); //picture JS
+                // alert(x);
+                var y =$('input[name=optradio1]:checked').val();// compliance
+                //  alert(y);
+                //write the code for the checkboxes here
+                var cost_;
+                if($("#i1").prop('checked') == true){
+
+                    if(cost == null || cost ==undefined){
+                        cost_=0;
+                    }else{
+                        cost_=cost;
+                    }
                 }
-            }
-            //alert(cost);
+                //alert(cost);
 
-            var schedule;
-            if($("#i2").prop('checked') == true){
-                schedule='yes';
-            }else{schedule='no'}
-           // alert(schedule);
+                var schedule;
+                if($("#i2").prop('checked') == true){
+                    schedule='yes';
+                }else{schedule='no'}
+                // alert(schedule);
 
-            var other;
-            if($("#i3").prop('checked') == true){
-                other='yes';
+                var other;
+                if($("#i3").prop('checked') == true){
+                    other='yes';
+
+                }else{
+                    other='no';
+                }
+                //  alert(other);
+
+                var rec=document.getElementById('recommend').value == '' ? 'no value' : document.getElementById('recommend').value;; //recommend text boxes;
+                var date_performed=document.getElementById('date_p').value == ''? 'no value' : document.getElementById('date_p').value;
+                var _follow=document.getElementById('follow').value == ''? 'no value' : document.getElementById('follow').value;
+                var _impact=document.getElementById('impact').value == ''? 'no value' : document.getElementById('impact').value;
+
+                //date and signature
+
+                var _sign=document.getElementById('sign').value == ''? 'no value' : document.getElementById('sign').value;;
+                var _date_pic=document.getElementById('date_pic').value == ''? 'no value' : document.getElementById('date_pic').value;
+
+                //alert(x);
+
+                var superin=document.getElementById('superint').value == ''? 'no value' : document.getElementById('superint').value;;
+                var _lead=document.getElementById('lead').value == ''? 'no value' : document.getElementById('lead').value;
+                var vendor=document.getElementById('vender').value == ''? 'no value' : document.getElementById('vender').value;;
+                //  var two_tier=document.getElementById('date_pic').value;
+                var cnse=document.getElementById('lead_cnse').value == ''? 'no value' : document.getElementById('lead_cnse').value;;
+                var cc=document.getElementById('cc').value == ''? 'no value' : document.getElementById('cc').value;;
+                var two_tier=document.getElementById('two_tier').value == ''? 'no value' : document.getElementById('two_tier').value;
+                //formData to be sent
+                var form_data={log:qc_log,tt:two_tier,btn:btn_text,project_qc:project,project_id:id,qc:qc_num,ini:init,p_b:project_b,con:contract,loc:location,sub:subcontractor,s_t:sub_tier,inspect:inspection,d_d:design_date,_spe:_specification,_dr:_drawing,submit:submittal,mat:_material,notes:_notes,xr:x,yr:y,zr:cost_,re:rec,d_p:date_performed,follow:_follow,im:_impact,sign:_sign,d:_date_pic,super:superin,lead:_lead,ven:vendor,cn:cnse,c:cc,sch:schedule,oth:other};
+
+                $.post('/qc_form',form_data,function(data){
+
+                    if(data=='success' && x == 'yea'){
+                        //call the ajax function to uplaod the pictures
+                        //insert_path();
+                        // alert(data);
+                        $.ajax({
+                            url: '/upload',
+                            type: 'POST',
+                            data: formData,
+                            processData: false,
+                            contentType: false,
+                            success: function(data){
+                                if(data=='success')
+                                    console.log('upload successful!\n');
+                                alert('Log Added for, Project :' + project +"QC Number:"+ qc_num);
+                            }
+                        });
+
+                    }
+                    else if(data=='success'){
+                        alert(data);
+                    }
+                    else{
+                        alert(data);
+                    }
+
+                });
+
+                //alert('Form Updated');
+                location.reload();
+
 
             }else{
-                other='no';
+               alert('Please Fill the mandatory fields')
             }
-          //  alert(other);
 
-            var rec=document.getElementById('recommend').value == '' ? 'no value' : document.getElementById('recommend').value;; //recommend text boxes;
-            var date_performed=document.getElementById('date_p').value == ''? 'no value' : document.getElementById('date_p').value;
-            var _follow=document.getElementById('follow').value == ''? 'no value' : document.getElementById('follow').value;
-            var _impact=document.getElementById('impact').value == ''? 'no value' : document.getElementById('impact').value;
-
-            //date and signature
-
-            var _sign=document.getElementById('sign').value == ''? 'no value' : document.getElementById('sign').value;;
-            var _date_pic=document.getElementById('date_pic').value == ''? 'no value' : document.getElementById('date_pic').value;
-
-            //alert(x);
-
-            var superin=document.getElementById('superint').value == ''? 'no value' : document.getElementById('superint').value;;
-            var _lead=document.getElementById('lead').value == ''? 'no value' : document.getElementById('lead').value;
-            var vendor=document.getElementById('vender').value == ''? 'no value' : document.getElementById('vender').value;;
-          //  var two_tier=document.getElementById('date_pic').value;
-            var cnse=document.getElementById('lead_cnse').value == ''? 'no value' : document.getElementById('lead_cnse').value;;
-            var cc=document.getElementById('cc').value == ''? 'no value' : document.getElementById('cc').value;;
-
-            //formData to be sent
-            var form_data={project_qc:project,project_id:id,qc:qc_num,ini:init,p_b:project_b,con:contract,loc:location,sub:subcontractor,s_t:sub_tier,inspect:inspection,d_d:design_date,_spe:_specification,_dr:_drawing,submit:submittal,mat:_material,notes:_notes,xr:x,yr:y,zr:cost_,re:rec,d_p:date_performed,follow:_follow,im:_impact,sign:_sign,d:_date_pic,super:superin,lead:_lead,ven:vendor,cn:cnse,c:cc,sch:schedule,oth:other};
-
-           $.post('/qc_form',form_data,function(data){
-
-                if(data=='success'){
-                    //call the ajax function to uplaod the pictures
-                    //insert_path();
-                   // alert(data);
-                    $.ajax({ 
-                        url: '/upload', 
-                        type: 'POST', 
-                        data: formData, 
-                        processData: false, 
-                        contentType: false, 
-                        success: function(data){ 
-                            if(data=='success') 
-                        console.log('upload successful!\n'); 
-                        alert('Log Added for, Project :' + project +"QC Number:"+ qc_num); 
-                        }  
-                    });
-
-                }
-                else{
-                    alert(data);
-                }
-
-            });
-
-            //alert('Form Updated');
 
         });//function ends here
 
 
         //***********************************************************************
         //************************************************************************
-        $('#log').click(function(){
+        $('#log').change(function(){
+
+
+           // $('#update').html()=='UPDATE';
+            //alert($('#update').html());
+            document.getElementById('update').innerHTML='UPDATE';
 
             var project=$("#project_qc :selected").text(); // The text content of the selected option
             var id_=$("#log").val();
@@ -126,11 +150,12 @@
             $.post('/get_form_fields',{p:id_,q:log_},function(data){
                 console.log('testing')
                 $('#qc_number').val(data[0].qc_number);
+                document.getElementById('project_name').innerHTML=data[0].qc_number;
                 $('#ini').val(data[0].name_ini);
                 $('#iDate').val(data[0].inspection_date);
                 $('#project').val(data[0].building);
                 $('#cn').val(data[0].c_n);
-                $('#subc').val(data[0].sub);
+                $('#subc').val(data[0].sub_contract);
                 $('#dpack').val(data[0].design_package);
                 $('#sub-tier').val(data[0].sub_t_contract);
                 $('#specification').val(data[0].specification);
@@ -158,7 +183,7 @@
                 console.log(data[0].other);
                  pic=data[0].Picture;
                 if(pic=='yea'){
-                    alert('hi from pic');
+                    //alert('hi from pic');
                     $('#c1').prop('checked',true);
                 }
                 else{
@@ -226,39 +251,45 @@
        // event.preventDefault();
            // var project ='';
             //var id ='';
-             project_name='';
+
             var project=$("#project_qc :selected").text(); // The text content of the selected option
            var id=$("#project_qc").val(); // The value of the selected option
            // alert(id);
             if(project=='Add new project')
             {
+
                  project_name=prompt('Enter the Project Name');
                 if(project_name === null){
                     return;
                 }
                 else
                 {
-                        $.post('/insert_project',{name_p:project_name},function(data){
+                    $.post('/insert_project',{name_p:project_name},function(data){
                         if(data=='success'){
 
                             $('#project_qc').empty();
                             load_projects();
-                            alert('Project Added');
-
-
-
-
-
                         }
                     });
 
+
+
+
+                    //$("#project_qc option").each(function() {
+                  //     alert($(this).text());});
+
                 }
+
         }
         else {
             $('#qc_form').trigger("reset");
             //selector for logs drop down menu
             var select_log=$('#log');
             $('#log').empty();
+                select_log.append($("<option>",{
+                    value:0,
+                    text:'Select Log'
+                }));
             $.post('/get_logs',{i:id},function(data){
               //  alert(data);
 
@@ -274,7 +305,6 @@
         }
            // $('#qc_number option:contains(" + project_name +")').attr('selected','selected');
 
-        set_name();
         });
     var new_pro=$('#project_qc');
 
@@ -287,6 +317,10 @@
             var select_picture=$('#picture');
             $.post('/get_pictures',{i:id,q:qc_number},function(data){
                 $('#picture').empty();
+                select_picture.append($("<option>",{
+                    value:0,
+                    text: 'SELECT PICTURE TO DOWNLOAD'
+                }));
                 $.each(data,function(i,item){
                     select_picture.append($("<option>",{
                         value:data[i].picture_path,
@@ -386,69 +420,68 @@
                   //  alert( data[k].cost);
                         var str= seq[1]+j; var val=data[k].ID;
                         ex.write({"cell": str,"content": val});
-                        var str= seq[2]+j; var val=data[k].qc_number;
-                        ex.write({"cell": (seq[2]+j),"content": val});
-                        var str= seq[3]+j; var val=data[k].name_ini;
-                        ex.write({"cell": (seq[3]+j),"content": val});
-                        var str= seq[4]+j; var val=data[k].building;
-                        ex.write({"cell": (seq[4]+j),"content": val});
-                        var str= seq[5]+j; var val=data[k].qc_number;
-                        ex.write({"cell": (seq[5]+j),"content": val});
-                        var str= seq[6]+j; var val=data[k].location;
-                        ex.write({"cell": (seq[6]+j),"content": val});
-                        var str= seq[7]+j; var val=data[k].sub_contract;
-                        ex.write({"cell": (seq[7]+j),"content": val});
-                        var str= seq[8]+j; var val=data[k].sub_t_contract;
-                        ex.write({"cell": (seq[8]+j),"content": val});
-                        var str= seq[9]+j; var val=data[k].inspection_date;
-                        ex.write({"cell": (seq[9]+j),"content": val});
-                        var str= seq[10]+j; var val=data[k].design_package;
-                        ex.write({"cell": (seq[10]+j),"content": val});
-                        var str= seq[11]+j; var val=data[k].drawing;
-                        ex.write({"cell": (seq[11]+j),"content": val});
-                        var str= seq[12]+j; var val=data[k].submittal;
-                        ex.write({"cell": (seq[12]+j),"content": val});
-                        var str= seq[13]+j; var val=data[k].material;
-                        ex.write({"cell": (seq[13]+j),"content": val});
-                        var str= seq[14]+j; var val=data[k].notes_comment;
-                        ex.write({"cell": (seq[14]+j),"content": val});
-                        var str= seq[15]+j; var val=data[k].Picture;
-                        ex.write({"cell": (seq[15]+j),"content": val});
-                        var str= seq[16]+j; var val=data[k].inspection_compliance;
-                        ex.write({"cell": (seq[16]+j),"content": val});
-                        var str= seq[17]+j; var val=data[k].recommend;
-                        ex.write({"cell": (seq[17]+j),"content": val});
-                        var str= seq[18]+j; var val=data[k].perform_date;
-                        ex.write({"cell": (seq[18]+j),"content": val});
-                        var str= seq[20]+j; var val=data[k].inspection_schdule;
-                        ex.write({"cell": (seq[19]+j),"content": val});
+                        var str= seq[2]+j; var val=data[k].qc_number
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[3]+j; var val=data[k].name_ini
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[4]+j; var val=data[k].building
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[5]+j; var val=data[k].c_n
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[6]+j; var val=data[k].location
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[7]+j; var val=data[k].sub_contract
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[8]+j; var val=data[k].sub_t_contract
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[9]+j; var val=data[k].inspection_date
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[10]+j; var val=data[k].design_package
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[11]+j; var val=data[k].drawing
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[12]+j; var val=data[k].submittal
+                        ex.write({"cell": str,"content": val}) ;
+                        var str= seq[13]+j; var val=data[k].material
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[14]+j; var val=data[k].notes_comment
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[15]+j; var val=data[k].Picture
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[16]+j; var val=data[k].inspection_compliance
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[17]+j; var val=data[k].recommend
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[18]+j; var val=data[k].perform_date
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[20]+j; var val=data[k].inspection_schdule
+                        ex.write({"cell": str,"content": val});
                         var str= seq[21]+j; var val=data[k].impacts
-                        ex.write({"cell": (seq[20]+j),"content": val});
-                        var str= seq[22]+j; var val=data[k].cost == 0 ? "no value" : data[k].cost;
-                        ex.write({"cell": (seq[21]+j),"content": val});
-                        var str= seq[23]+j; var val=data[k].schedule == 'null' ? "no value" :data[k].schedule;
-                       // ex.write({"cell": (seq[22]+j),"content": val});
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[22]+j; var val=data[k].cost == null ? 'no value' : data[k].cost;
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[23]+j; var val=data[k].schedule
+                        ex.write({"cell": str,"content": val});
                         var str= seq[24]+j; var val=data[k].sign
-                        ex.write({"cell": (seq[23]+j),"content": val});
+                        ex.write({"cell": str,"content": val});
                         var str= seq[25]+j; var val=data[k].date
-                        ex.write({"cell": (seq[24]+j),"content": val});
+                        ex.write({"cell": str,"content": val});
                         var str= seq[26]+j; var val=data[k].wt_superint
-                        ex.write({"cell": (seq[25]+j),"content": val});
+                        ex.write({"cell": str,"content": val});
                         var str= seq[27]+j; var val=data[k].wt_contract_lead
-                        ex.write({"cell": (seq[26]+j),"content": val});
+                        ex.write({"cell": str,"content": val});
                         var str= seq[28]+j; var val=data[k].vendor
-                        ex.write({"cell": (seq[27]+j),"content": data[k].vendor});
+                        ex.write({"cell": str,"content": data[k].vendor});
                         var str= seq[29]+j; var val=data[k].cc
-                        ex.write({"cell": (seq[28]+j),"content": val});
+                        ex.write({"cell": str,"content": val});
                         var str= seq[30]+j; var val=data[k].wt_contract_lead
-                        ex.write({"cell": (seq[29]+j),"content": val});
+                        ex.write({"cell": str,"content": val});
                         var str= seq[31]+j; var val=data[k].last_updated
-                        ex.write({"cell": (seq[30]+j),"content": val});
-                        var str= seq[32]+j; var val=data[k].other == 'null' ? 'no value' : data[k].other;
-                       // alert("i am"+val);
-                        //ex.write({"cell": (seq[31]+j),"content": val});
-                        //var str= seq[33]+j; var val=data[k].second_tier =='null' ? 'no value' : data[k].second_tier;
-                        //ex.write({"cell": (seq[32]+j),"content": val});
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[32]+j; var val=data[k].other
+                        ex.write({"cell": str,"content": val});
+                        var str= seq[33]+j; var val=data[k].second_tier
+                        ex.write({"cell": str,"content": val});
                         //console.log((seq[32]+j) + data[k].qc_number);
 
                         j++;
@@ -465,6 +498,18 @@
 
         //Exporting All the logs to the Excel Sheet
 
+        $('#picture').change(function(e){
+
+            var val=$('#picture').val(); //id of the QC number
+            var Name=$('#picture :selected').text(); //QC number
+            var link = document.createElement("a");
+            link.download = Name;
+            link.href = val;
+            link.click()
+            //alert(val);
+            //alert(Name);
+
+        })
 
     });//document ready function gets over here
 
@@ -487,7 +532,6 @@
             var baseChar =("A").charCodeAt(0);
             var alpha="";
             var number =i;
-
             do{
                 number -= 1;
                 alpha =String.fromCharCode(baseChar + (number %26)) +alpha;
@@ -518,7 +562,7 @@
                 }));
 
             });
-
+            $('#project_qc option:last-child').attr('selected', 'selected');
             pro.append($("<option>",{
                 value: i,
                 text: p
@@ -526,16 +570,14 @@
 
         });
 
-
+    //clear all the table fields
+    $('#new_log').click(function(){
+        $('#qc_form').trigger("reset");
+        document.getElementById('update').innerHTML='UPDATE';
+        document.getElementById('project_name').innerHTML='';
+    });
 
     };
 
-    function set_name()
-    {
-        $("#project_qc option").each(function() {
-            if($(this).text() == project_name) {
-                $(this).attr('selected', 'selected');
-            }
-           // alert($(this).text());
-        });
-    }
+
+

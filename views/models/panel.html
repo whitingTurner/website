@@ -115,6 +115,7 @@
                 <li><a href ="#" rel="div4">Assign Models(Permission)</a></li>
                 <li><a href="#" rel="div5">Users to be approved</a></li>
                 <li><a href="#" rel="div7">Delete Project in Quality Control Form</a></li>
+                <li><a href="#" rel="div8">RESET USER</a></li>
             </ul>
 
 
@@ -253,11 +254,24 @@
                         </table>
                     </div>
                 </div>
+
+                <div class="col-md-6" id="div8" style="display:none">
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="reset">
+                            <thead>
+                            <tr>
+                                <th>USERNAME</th>
+                                <th>EMAIL</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
                 <div class="col-md-12" id="div4" style="display:none">
                 <span class="lead">Users & Models</span><br/><br /><br />
                     <form>
                         <fieldset class="form-inline">
-                            <span><label for="select_user">SELECT USER</label></span>
+                            <span><label for="user_select">SELECT USER</label></span>
                             <select class="form-control" id="user_select" class="select-light report-select-input">
 
                             </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -268,7 +282,7 @@
                             </select>
                             <br /><br />
                             <div class="control-group col-lg-5">
-                                <label class="control-label" for="sel_del">Select Models to Assign/Delete</label>
+                                <label class="control-label" for="model">Select Models to Assign/Delete</label>
                                 <div class="controls">
                                     <select multiple="multiple" class="form-control" id="models">
                                     </select>

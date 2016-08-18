@@ -45,7 +45,7 @@ app.use('/', express.static(__dirname + '/views/models/'));
 app.use(favicon(__dirname + '/public/images/favicon1.ico'));
 app.use('/api', api);
 app.use('/uploads',express.static(__dirname + '/uploads/'))
-
+app.use('/scripts',express.static(__dirname + '/jquery-validation-1/'));
 //setting the port
 app.set('port', process.env.PORT);
 
@@ -53,9 +53,9 @@ app.set('port', process.env.PORT);
 var connection = mysql.createConnection({
     host : 'localhost',
     user :  'root',
-    password :'',
+    password :'root',
     database: 'whiting_turner',
-    port: '3307',
+    port: '3306',
 });
 
 
@@ -493,6 +493,9 @@ app.post('/get_current_log',function(req,res){
 
 });
 app.post('/qc_form',function(req,res){
+    var btn_text=req.body.btn;
+    var query='';
+    var log=req.body.log;
     var qc=req.body.qc; var init=req.body.ini; var p_b=req.body.p_b;
     var con=req.body.con;var lo=req.body.loc;var sub=req.body.sub;
     var s_t=req.body.s_t; var inspect=req.body.inspect;var d_d=req.body.d_d;
@@ -503,7 +506,7 @@ app.post('/qc_form',function(req,res){
     var im=req.body.im; var sign=req.body.sign;
     var d=req.body.d; var s=req.body.super; var l=req.body.lead; var v=req.body.ven; var cn=req.body.cn;
     var c=req.body.c;
-    var z1=req.body.sch;var z2=req.body.oth;
+    var z1=req.body.sch;var z2=req.body.oth;var second_tier=req.body.tt;
     var project_qc=req.body.project_qc;var project_id=req.body.project_id;
 
     var basedate = new Date();
@@ -512,18 +515,40 @@ app.post('/qc_form',function(req,res){
         drawing:draw,submittal:submit, material:mat,notes_comment:note, Picture:x,inspection_compliance:y,
         recommend:rec,perform_date:d_p,inspection_schdule:follow,impacts:im,
         cost:z,schedule:z1,other:z2,date:d,sign:sign,wt_superint:s,wt_contract_lead:l,vendor:v,cc:c,
-        cnse_lead:cn,last_updated:basedate,other:z2};
+        cnse_lead:cn,last_updated:basedate,other:z2,second_tier:second_tier};
 
         localStorage.setItem('project_d',project_id);
         localStorage.setItem('qc_number',qc);
-    var query='INSERT into form_fields SET ?'
-    connection.query('Insert into form_fields SET ?',post1,function(err,rows,fields){
-        if(err){
-            res.send('err'+'failed');
-        }else{
-            res.send('success');
-        }
-    });
+console.log('QC NUMBER='+qc);
+    if(btn_text=='UPDATE'){
+        query='update form_fields SET ? where qc_number = ?';
+        console.log('update-button'+btn_text);
+        connection.query(query,[post1,log],function(err,rows,fields){
+            if(err){
+                console.log('update failed for'+qc);
+                console.log(err);
+                res.send('err'+'failed');
+
+            }else{
+                console.log(btn_text);
+                console.log('update success for '+qc);
+                res.send('success');
+
+            }
+        });
+    }
+    else{
+        connection.query('Insert into form_fields SET ?',post1,function(err,rows,fields){
+            if(err){
+                res.send('err'+'failed');
+            }else{
+                console.log(btn_text);
+                res.send('success');
+                console.log('success');
+            }
+        });
+    }
+
 
 
 });

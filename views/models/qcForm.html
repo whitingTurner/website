@@ -18,24 +18,27 @@
     <script src="../../public/scripts/qcForm.js"></script>
     <script src="../../public/styles/ExcelPlus/2.3/excelplus-2.3.min.js"></script>
     <script src="../../public/styles/xlsx/dist/xlsx.core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.js"></script>
     <!-- Javascript Form to the Excel Sheet -->
     <style>
         #upload-input{
             display:none;
         }
+
+        input[type="text"] {
+
+            border: none;
+            border-bottom: solid 2px #c9c9c9;
+            transition: border 0.3s;
+        }
+         input[type="text"]:focus,
+         input[type="text"].focus {
+            border-bottom: solid 2px black;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
-    <<script type="text/javascript">
-        $(document).ready(function(){
-            var validator=$('#qc_form').validate();
-            validator.element('#subc');
-            validator.element('#iDate');
-            validator.element('#optradio2');
-            validator.element('#qc_number');
-        })
 
-    </script>
     <!-- Bootstrap CDN -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -77,7 +80,7 @@
         </div>
         <div class="col-md-3">
             <div class="form-group">
-                <label for="log">Log</label>
+                <label for="log">QC NUMBER</label>
                 <select class="form-control" id="log">
                     <option>Select Log</option>
                 </select>
@@ -104,11 +107,11 @@
 <form id="qc_form">
 
 
-        <h2 class="text-center"><Job 014470. 100 Bass Biolody Building Project></h2>
+       <span id="project_name" class="text-center"><h2></h2></span>
         <div class="row" style="padding-top: 10px">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="qc_number" class="col-sm-4">QC #</label>
+                    <label for="qc_number" class="col-sm-4">QC # *</label>
                     <div class="col-sm-6">
                         <input class="form-control input-sm" type="text" id="qc_number" required>
                     </div>
@@ -120,9 +123,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-4">Inspection Date</label>
+                    <label class="col-sm-4">Inspection Date *</label>
                     <div class="col-sm-6">
-                        <input class="form-control input-sm" id="iDate" type="text" required>
+                        <input class="form-control input-sm" id="iDate" type="date" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -132,13 +135,13 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="QCN" class="col-sm-4">Contract Number</label>
+                    <label for="cn" class="col-sm-4">Contract Number</label>
                     <div class="col-sm-6">
                         <input class="form-control input-sm" id="cn" type="text">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-4">Sub Contractor</label>
+                    <label class="col-sm-4">Sub Contractor *</label>
                     <div class="col-sm-6">
                         <input class="form-control input-sm" id="subc" type="text" required>
                     </div>
@@ -194,8 +197,8 @@
                 <label ><b><u>NOTES & COMMENTS</u></b></label>
                 <textarea class="form-control" id="notes" rows="3"></textarea>
                 <div class="pictures">
-                    <span>Pictures Taken</span>&nbsp;
-                    <label class="radio-inline"><input type="radio" name="optradio" id="c1" value="yea">YES</label>
+                    <span>Pictures Taken</span>&nbsp;<br />
+                    <label class="radio-inline"><input type="radio" name="optradio" id="c1" value="yea" required>YES</label>
                     <label class="radio-inline"><input type="radio" name="optradio" id="c2" value="nope">NO</label>
                     <div id="file_name"></div>
                 </div>
@@ -203,7 +206,7 @@
             </div>
             <hr>
             <div class="form-group col-md-12 rad" id="radio_one">
-                <span>Through this inspection, the item was found to be apparently in compliance with the drawings and Specifications</span>
+                <span>Through this inspection, the item was found to be apparently in compliance with the drawings and Specifications *</span>
 
                 <label class="radio-inline"><input type="radio" name="optradio1" id="r1" value="yes">YES</label>
                 <label class="radio-inline"><input type="radio" name="optradio1" id="r2" value="no">NO</label>
@@ -216,7 +219,7 @@
                 <textarea class="form-control" id="recommend" rows="3"></textarea> <br>
                 <label class="col-sm-3">Date To be Performed</label>
                 <div class="col-sm-3">
-                    <input class="form-control input-sm" type="text" id="date_p">
+                    <input class="form-control input-sm" type="date" id="date_p">
                 </div>
                 <label class="col-sm-3">Follow-Up Inspection Scheduled for:</label>
                 <div class="col-sm-3">
@@ -302,7 +305,8 @@
             <hr>
             <div class="form-group text-center col-md-12">
 
-                <input type="submit" name="login" class="btn btn-primary" value="Update" id="update">
+
+                <button class="btn btn-primary" id="update">CREATE</button>
             </div>
         </div>
     </div>

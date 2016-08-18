@@ -6,11 +6,13 @@
 	<meta charset="utf-8">
 
 	<title>Whiting-Turner</title>
-	<script src="https://code.jquery.com/jquery-2.1.2.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- locall downloaded bootstrap -->
 	<link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -18,13 +20,13 @@
 	<!-- JJ style sheet -->
 	<link rel="stylesheet" type="text/css" href="../../public/styles/modal_login.css">
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 
 	<!-- Autodesk.ADN.Toolkit.Viewer -->
 	<script src=" https://rawgit.com/Developer-Autodesk/library-javascript-view.and.data.api/master/js/Autodesk.ADN.Toolkit.ViewData.js"></script>
 
 	<!-- jquery -->
-	<script src="https://code.jquery.com/jquery-2.1.2.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.js"></script>
 
 	<!-- carousel CSS -->
 	<link rel="stylesheet" src="../../public/styles/carousel.css">
@@ -40,15 +42,13 @@
 		.Center-Container{
 			position: relative;
 		}
-
+		body {background-color: black; color: orangered;}
+		a{color:orangered}
 
 	</style>
-	<!--<script type="text/javascript">
-		$(document).ready(function(){
-			$('#admin').hide();
-		});
-
-	</script>-->
+	<<script type="text/javascript">
+		$('#val_val').validate();
+	</script>
 	<script type="text/javascript">
 		function check(){
 
@@ -62,6 +62,7 @@
 					$('#admin').hide();
 					$('#uploadx').hide();
 					$('#modelsx').hide();
+					$('#out_index').hide();
 					$('#log_in').show();
 					$('#new_user').show();
 					$('#signup').show();
@@ -107,8 +108,8 @@
 		</div>
 
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
-		<ul class="nav navbar-nav navbar-left navr">
-			<li ><a href="http://www.whiting-turner.com/">WHITING-TURNER</a></li>
+			<ul class="nav navbar-nav navbar-left navr">
+				<li ><a href="http://www.whiting-turner.com/">WHITING-TURNER</a></li>
 				<li><a href="http://www.whiting-turner.com/about_us/about_us.html">About us</a></li>
 				<li><a href="http://www.whiting-turner.com/contact/contact.html">Contact Us</a></li>
 			</ul>
@@ -120,9 +121,9 @@
 <div class="container-fluid text-center pagination-centered " style="margin-top: 20%"  >
 
 	<h1 class="display-1">Whiting-Turner Model Viewer</h1><br/><br />
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="log_in">Log in</button>&nbsp;&nbsp;<span id="new_user"><b>New User?</b><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal" id="signup">Sign up</button></span><br /> <br />
-	<span><a href="/admin.html" id="uploadx">Upload Model</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
-	<span><a href="/index1.html" id="modelsx">View 3d Models</a></span><br /> <br />
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="log_in">Log in</button>&nbsp;&nbsp;&nbsp;&nbsp;<span id="new_user"><b>NEW USER?&nbsp;&nbsp;&nbsp;</b><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal" id="signup">Sign up</button></span><br /> <br />
+	<span><a href="/admin.html" id="uploadx">UPLOAD MODEL</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+	<span><a href="/index1.html" id="modelsx">VIEW 3D MODELS</a></span><br /> <br />
 	<span><a href="/panel.html" id="admin">ADMIN PANEL</a></span><br /> <br />
 	<div><spav></spav></div>
 	<button type="button" class="btn btn-danger" id="out_index">Logout</button>
@@ -145,13 +146,14 @@
 		<div class="loginmodal-container">
 			<h1>Login to Your Account</h1><br>
 
-			<form data-toggle="validator" role="form">
-				<label for="inputName" class="control-label">Email</label>
-				<input type="email" class="form-control" name="user" placeholder="Username" id="u_wt" data-error="Valid address invalid" required>
-				<label for="inputemail" class="control-label">Password</label>
+				<form id="login_form">
+				<label for="u_wt" class="control-label">Email *</label>
+				<input type="email" class="form-control" name="user" placeholder="Username" id="u_wt" data-error="Valid address invalid" required><br/>
+				<label for="p_wt" class="control-label">Password *</label>
 				<input type="password" class="form-control" name="pass" placeholder="Password" id="p_wt" required>
+				</form>
 				<input type="submit" name="login" class="login loginmodal-submit" value="Login" id="w_login">
-			</form>
+
 		</div>
 	</div>
 </div>
@@ -160,62 +162,63 @@
 	<div class="modal-dialog">
 		<div class="loginmodal-container">
 
-				<fieldset>
-					<div id="legend">
-						<legend class="">Register</legend>
+			<fieldset>
+				<div id="legend">
+					<legend class="">Register</legend>
+				</div>
+				<form id="val_val">
+				<div class="control-group">
+					<label class="control-label" for="username">Username *</label>
+					<div class="controls">
+						<input type="text" id="username" name="username" placeholder="" class="form-control input-lg" required>
 					</div>
-					<div class="control-group">
-						<label class="control-label" for="username">Username</label>
-						<div class="controls">
-							<input type="text" id="username" name="username" placeholder="" class="form-control input-lg">
-							<p class="help-block">Username can contain any letters or numbers, without spaces</p>
-						</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="email">E-mail *</label>
+					<div class="controls">
+						<input type="email" id="email" name="email" placeholder="" class="form-control input-lg" required>
+						<p class="help-block">Please provide your E-mail</p>
 					</div>
+				</div>
 
-					<div class="control-group">
-						<label class="control-label" for="email">E-mail</label>
-						<div class="controls">
-							<input type="email" id="email" name="email" placeholder="" class="form-control input-lg">
-							<p class="help-block">Please provide your E-mail</p>
-						</div>
+				<div class="control-group">
+					<label class="control-label" for="password">Password *</label>
+					<div class="controls">
+						<input type="password" id="password" name="password" placeholder="" class="form-control input-lg" required>
+						<p class="help-block">Password should be at least 6 characters</p>
 					</div>
+				</div>
 
-					<div class="control-group">
-						<label class="control-label" for="password">Password</label>
-						<div class="controls">
-							<input type="password" id="password" name="password" placeholder="" class="form-control input-lg">
-							<p class="help-block">Password should be at least 6 characters</p>
-						</div>
+				<div class="control-group">
+					<label class="control-label" for="password_confirm">Password (Confirm)*</label>
+					<div class="controls">
+						<input type="password" id="password_confirm" name="password_confirm" placeholder="" class="form-control input-lg" required>
+						<p class="help-block">Please confirm password</p>
 					</div>
+				</div>
 
-					<div class="control-group">
-						<label class="control-label" for="password_confirm">Password (Confirm)</label>
-						<div class="controls">
-							<input type="password" id="password_confirm" name="password_confirm" placeholder="" class="form-control input-lg">
-							<p class="help-block">Please confirm password</p>
-						</div>
+				</form>
+				<div></div>
+				<div class="control-group">
+					<!-- Button -->
+					<div class="controls">
+
+						<input type="submit" name="login"  value="Login" id="register" class="btn btn-primary">
 					</div>
+				</div>
 
-
-					<div></div>
-					<div class="control-group">
-						<!-- Button -->
-						<div class="controls">
-
-							<input type="submit" name="login"  value="Login" id="register" class="btn btn-primary">
-						</div>
-					</div>
-				</fieldset>
-
+			</fieldset>
+		</form>
 		</div>
 	</div>
 </div>
 <!-- to load the page faster, all scripts are down -->
 
 <!-- jQuery -->
-<script src="//code.jquery.com/jquery.js"></script>
+
 <!-- Bootstrap JavaScript -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="../../public/scripts/config.js"></script>
 
 <script type="text/javascript" src="https://rawgit.com/Developer-Autodesk/library-javascript-view.and.data.api/master/js/Autodesk.ADN.Toolkit.ViewData.js"></script>
@@ -223,6 +226,5 @@
 
 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
 </body>
 </html>

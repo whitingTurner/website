@@ -32,30 +32,37 @@ $(document).ready(function(){
     });
     //approve butting function
     $(document).on('click', '#response2 .approve',function(){
+ var res=confirm('Are you sure you want to Approve the USER?');
+        if(res==false){
+            return;
+        }else{
 
-        var currentRow=$(this).closest("tr");
-        var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
-        var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
-        var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
-        var data=col1+"\n"+col2+"\n"+col3+"\n";
-        //alert(data);
+            var currentRow=$(this).closest("tr");
+            var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+            var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+            var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+            var data=col1+"\n"+col2+"\n"+col3+"\n";
+            //alert(data);
 
-        $.post('/transfer',{c1:col1,c2:col2,c3:col3},function(data){
-            if(data=='success2'){
-                alert('User updated');
-                //$("#response1").find("tr:not(:first)").remove();
-            }
-            else{
-                alert('Please try after sometime');
-            }
-        });
-        $(this).closest('tr').remove();
-        $("#response1").find("tr:not(:first)").remove();
-        $("#response").find("tr:not(:first)").remove();
-        fetch_user();
+            $.post('/transfer',{c1:col1,c2:col2,c3:col3},function(data){
+                if(data=='success2'){
+                    alert('User updated');
+                    //$("#response1").find("tr:not(:first)").remove();
+                }
+                else{
+                    alert('Please try after sometime');
+                }
+            });
+            $(this).closest('tr').remove();
+            $("#response1").find("tr:not(:first)").remove();
+            $("#response").find("tr:not(:first)").remove();
+            fetch_user();
+        }
+
 
     });
     $(document).on('click', '#response1 .editbtn', function(){
+
         var currentTD = $(this).parents('tr').find('td');
         if ($(this).html() == 'Edit') {
             $.each(currentTD, function () {
@@ -71,44 +78,62 @@ $(document).ready(function(){
 
 
        if($(this).html() == 'Save') {
-            var currentRow=$(this).closest("tr");
-           var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
-           var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
-           var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
-           var col4=currentRow.find("td:eq(3)").text();
-           var data=col1+"\n"+col2+"\n"+col3+"\n"+col4;
-           alert(data);
-          // $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
-           $.post('/update_table',{c1:col1,c2:col2,c3:col3,c4:col4,oe:default_email},function(data){
-               if(data=='success'){
-                   alert('User updated');
-               }
-               else{
-                   alert('Please try after sometime');
-               }
-           });
+           var res=confirm('Following Entry will be updated');
+           if(res==false){
+               return;
+           }else{
+
+               var currentRow=$(this).closest("tr");
+               var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+               var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+               var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+               var col4=currentRow.find("td:eq(3)").text();
+               var data=col1+"\n"+col2+"\n"+col3+"\n"+col4;
+               alert(data);
+               // $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
+               $.post('/update_table',{c1:col1,c2:col2,c3:col3,c4:col4,oe:default_email},function(data){
+                   if(data=='success'){
+                       alert('User updated');
+                   }
+                   else{
+                       alert('Please try after sometime');
+                   }
+               });
+           }
+
         }
         $(this).html($(this).html() == 'Edit' ? 'Save' : 'Edit')
     });
 
     $(document).on('click','#response .editbtn1',function(){
-        alert('Deleting the recording');
-        var currentRow=$(this).closest("tr");
-        var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
-        var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
-        var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
-        var col4=currentRow.find("td:eq(3)").text();
-        var data=col1+"\n"+col2+"\n"+col3+"\n"+col4;
-        //alert(data);
-        $.post('/del_user',{u:col1},function(data){
-            if(data=='success'){
-                alert('Entry Deleted');
-            }
-        });
-        $(this).closest('tr').remove();
-        $("#response1").find("tr:not(:first)").remove();
-        $("#response").find("tr:not(:first)").remove();
-        fetch_user();
+        var res=confirm('Delete this entry?');
+        if(res==false){
+            return;
+        }else{
+            var currentRow=$(this).closest("tr");
+            var col1=currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+            var col2=currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+            var col3=currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+            var col4=currentRow.find("td:eq(3)").text();
+            var data=col1+"\n"+col2+"\n"+col3+"\n"+col4;
+            //alert(data);
+            $.post('/del_user',{u:col1},function(data){
+                if(data=='success'){
+                    alert('Entry Deleted');
+                }
+            });
+            $(this).closest('tr').remove();
+            $("#response1").find("tr:not(:first)").remove();
+            $("#response").find("tr:not(:first)").remove();
+            fetch_user();
+        }
+
+    });
+
+    //Reset FUNCTION
+
+    $(document).on('click','#reset .reset',function(){
+        alert('I\'ll reset the The USER');
     })
 
     
@@ -265,6 +290,7 @@ $(document).ready(function(){
     });
 
 
+
     $.get('/get_projects',function(data){
 
         var selector=document.getElementById('qc_form');
@@ -308,10 +334,14 @@ function fetch_user(){
         var del='DELETE'
         var results=document.getElementById('response');
         var result=document.getElementById('response1');
+        var res=document.getElementById('reset');
         for(var i=0;i<data.length;i++){
             results.innerHTML += "<tr><td>"+data[i].username+"</td><td>"+data[i].last_logged_in+"</td><td>"+data[i].logged_in+"</td><td>"+data[i].admin+"</td><td><button class='editbtn1 btn btn-danger'>"+del+"</button> </td></tr>";
 
             result.innerHTML +="<tr><td contenteditable='false'>"+data[i].username+"</td><td>"+data[i].email+"</td><td contenteditable='false'>"+data[i].d_password+"</td><td contenteditable='false'>"+data[i].admin+"</td><td><button class='editbtn btn btn-warning'>Edit</td></tr>"
+
+            res.innerHTML +="<tr><td>"+data[i].username+"</td><td>"+data[i].email+"</td><td><button class='reset btn btn-warning'>RESET</td></tr>"
+
         }//end of for loop
         //Loading the users form the databse
         // add the new options for models

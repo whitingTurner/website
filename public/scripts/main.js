@@ -2,27 +2,27 @@ var urn_x='';
 var file_name_x='';
 var flag=0;
 /*function insert_db1(){
-    alert(urn_x);
-    alert(file_name_x);
-    //event.preventDefault();
-urn_x='hello';file_name_x='jj';
-   // data.username = $('#usernameinput').val();
-   // data.password = $('#passwordinput').val();
-   // JSON.stringify(data);
-   // console.log(data);
+ alert(urn_x);
+ alert(file_name_x);
+ //event.preventDefault();
+ urn_x='hello';file_name_x='jj';
+ // data.username = $('#usernameinput').val();
+ // data.password = $('#passwordinput').val();
+ // JSON.stringify(data);
+ // console.log(data);
 
-    $.ajax({
-        type: 'POST',
-        url: '/endpoint',
-        data: {u: urn_x, p: file_name_x},
-        dataType: 'application/json',
-        success: function(data) {
-            console.log('success');
-            console.log(data);
-        }
-    });
-};
-*/
+ $.ajax({
+ type: 'POST',
+ url: '/endpoint',
+ data: {u: urn_x, p: file_name_x},
+ dataType: 'application/json',
+ success: function(data) {
+ console.log('success');
+ console.log(data);
+ }
+ });
+ };
+ */
 $('#c_p').click(function(event){
     event.preventDefault();
     var old_pass=document.getElementById('o_wt').value;
@@ -37,26 +37,39 @@ $('#c_p').click(function(event){
             alert('Please try after sometime');
         }
     })
-})
-$('#register').click(function(){
-
-    var pass=document.getElementById('password').value;
-    var emailid=document.getElementById('email').value;
-    var user=document.getElementById('username').value;
-    post={p:pass,e:emailid,u:user};
-    $.post('/sign_up',post,function(data){
-       if(data=='success'){
-           alert('Registration Succesfull. PLease contact Tyler Davis at tyer.davis@whiting-turner.com to approve you login credentials');
-           location.reload();
-       }
-       else{
-           alert(data);
-       }
+});
 
 
-    });
-    //alert(pass+emailid+user);
-});//signup click event
+
+$('#register').click(function(e){
+    e.preventDefault();
+        if($('#val_val').valid()){
+            alert('Form Valid');
+            var pass=document.getElementById('password').value;
+            var emailid=document.getElementById('email').value;
+            var user=document.getElementById('username').value;
+            post={p:pass,e:emailid,u:user};
+            $.post('/sign_up',post,function(data){
+                if(data=='success'){
+                    alert('Registration Succesfull. PLease contact Tyler Davis at tyer.davis@whiting-turner.com to approve you login credentials');
+                    location.reload();
+                }
+                else{
+                    alert(data);
+                }
+
+
+            });
+
+
+        }else{
+            return;
+        }
+
+
+
+});
+
 $('#out_out').click(function(event){
     event.preventDefault();
     var txt;
@@ -95,62 +108,69 @@ $('#out_index').click(function(event){
 //for handling the carousel function in the bootstrap
 $("#carousel").carousel();
 
-$('#out_index').hide();
+
 $('#w_login').click(function(event){
     event.preventDefault();
-   // alert('You wanna login?')
-    var user_name_wt=document.getElementById("u_wt").value;
-    var password_wt=document.getElementById("p_wt").value;
-    //console.log(user_name_wt);
-   // console.log(password_wt);
-    //alert(user_name_wt);
-    $.post("/login",{user_w: user_name_wt, pass_w: password_wt}, function (data) {
-      //  alert(data);
-      //  alert(data.result + "" + "" +data.ad);
+    if($('#login_form').valid()){
+
+        //alert('You wanna login?')
+        var user_name_wt=document.getElementById("u_wt").value;
+        var password_wt=document.getElementById("p_wt").value;
+        //console.log(user_name_wt);
+        // console.log(password_wt);
+        //alert(user_name_wt);
+        $.post("/login",{user_w: user_name_wt, pass_w: password_wt}, function (data) {
+            //  alert(data);
+            //  alert(data.result + "" + "" +data.ad);
             var d= data.result;
-       // alert(d);
-        if(data.ad==1){
-            $("#admin").show();
-        }
-        console.log(d);
-       if(d=="success") {
-              // alert(data);
-               window.location="/admin.html"
-       }
-        else if(data== d){
-           //alert(data);
-           alert('You are already logged in other device or PC');
-           window.location='/';
-       }
-        else if(d=='bad data'){
-          // alert(data);
-         //  alert(data);
-           alert('Invalids details, Either Email or Password is incorrect');
-           window.location="/";
-       }
-        else{
-          // alert(data);
-           alert('Please try again in sometime');
-           window.location="/";
-       }
-    });
+            // alert(d);
+            if(data.ad==1){
+                $("#admin").show();
+            }
+            console.log(d);
+            if(d=="success") {
+                // alert(data);
+                window.location="/admin.html"
+            }
+            else if(data== d){
+                //alert(data);
+                alert('You are already logged in other device or PC');
+                window.location='/';
+            }
+            else if(d=='bad data'){
+                // alert(data);
+                //  alert(data);
+                alert('Invalids details, Either Email or Password is incorrect');
+                window.location="/";
+            }
+            else{
+                // alert(data);
+                alert('Please try again in sometime');
+                window.location="/";
+            }
+        });
+
+    }else{
+        return;
+    }
+
 })
 function insert_db(){
 
-console.log("flag="+ flag)
-       if(flag==1) {
-           alert('New Model Added')
-           var user, pass;
-           user = urn_x;
-           pass = file_name_x;
-           $.post("/endpoint", {user1: user, password: pass}, function (data) {
-               if (data === 'yes') {
-                   alert("Model Uploaded");
-               }
-           });
+    console.log("flag="+ flag)
+    if(flag==1) {
+        alert('New Model Added')
+        var user, pass;
+        user = urn_x;
+        pass = file_name_x;
+        $.post("/endpoint", {user1: user, password: pass}, function (data) {
+            if (data === 'yes') {
+                alert("Model Uploaded");
+            }
+        });
 
 
-       }
+    }
     flag=0;
 }
 
@@ -160,8 +180,8 @@ jQuery(document).ready(function($) {
 
 
     var viewDataClient = new Autodesk.ADN.Toolkit.ViewData.AdnViewDataClient(
-                  'https://developer.api.autodesk.com',
-                  'https://whiting-turner-auth.herokuapp.com/auth');
+        'https://developer.api.autodesk.com',
+        'https://whiting-turner-auth.herokuapp.com/auth');
 
     ////////////////////
     //private const
@@ -175,7 +195,7 @@ jQuery(document).ready(function($) {
     $('#inputModellist').change(function(event) {
         /* Show the screen-shot */
         var urn = $('#inputModellist').val();
-        
+
         if(urn === '')
         {
             //hide the screen shot
@@ -189,7 +209,7 @@ jQuery(document).ready(function($) {
         $('#inputSelectedUrn').val(urn);
 
         console.log('selected urn:' + urn);
-        
+
 
         // generating the screen-shot
         getThumbnail(urn, setScreenshot);
@@ -199,7 +219,7 @@ jQuery(document).ready(function($) {
 
     var getThumbnail = function(urn, callback)
     {
-        
+
         viewDataClient.getThumbnailAsync (
             viewDataClient.fromBase64(urn),
             callback, //callback
@@ -207,7 +227,7 @@ jQuery(document).ready(function($) {
             150,//width,
             150,//height,
             null//guid
-            );
+        );
     }
 
     var setScreenshot = function(base64){
@@ -220,10 +240,10 @@ jQuery(document).ready(function($) {
         console.error(err);
     };
 
-    
+
 
     $('#btnGetEmbededingcode').click(function(event) {
-        
+
         //replace with the selected urn
 
         var urn = $('#inputModellist').val();
@@ -345,14 +365,14 @@ jQuery(document).ready(function($) {
                                     response.file.name);
                                 createAutoClosingAlert("Translation is successful: " +
                                     response.file.name + ".");
-                      
+
                                 console.log("Viewable: ");
                                 console.log(viewable);
                                 //var fileId = viewDataClient.fromBase64(
                                 //    viewable.urn);
                                 addToCombo(viewable.urn, response.file.name);
-                               // alert(viewable.urn);
-                               // alert(response.file.name);
+                                // alert(viewable.urn);
+                                // alert(response.file.name);
                                 urn_x=viewable.urn;
                                 file_name_x=response.file.name;
                                 localStorage.setItem('urn',urn_x);
@@ -418,51 +438,51 @@ jQuery(document).ready(function($) {
 
     // Do something when a user chooses or drops a file:
     zone.event('send', function (selectedFiles) {
-    // // Depending on browser support files (FileList) might contain multiple items.
-    selectedFiles.each(function (file) {
-      // // React on successful AJAX upload:
-      // file.event('done', function (xhr) {
-      //   // 'this' here points to fd.File instance that has triggered the event.
-      //   alert('Done uploading ' + this.name + ', response:\n\n' + xhr.responseText);
-      // });
+        // // Depending on browser support files (FileList) might contain multiple items.
+        selectedFiles.each(function (file) {
+            // // React on successful AJAX upload:
+            // file.event('done', function (xhr) {
+            //   // 'this' here points to fd.File instance that has triggered the event.
+            //   alert('Done uploading ' + this.name + ', response:\n\n' + xhr.responseText);
+            // });
 
-        //add the native file to the array
-        files.push(file.nativeFile);
-        //console.log(file.name);
+            //add the native file to the array
+            files.push(file.nativeFile);
+            //console.log(file.name);
 
-        viewDataClient.getBucketDetailsAsync(
-            bucket,
-            //onSuccess
-            function (bucketResponse) {
-                console.log('Bucket details successful:');
-                console.log(bucketResponse);
-                uploadFiles(bucket, files);
-            },
-            //onError
-            function (error) {
-                console.log("Bucket doesn't exist");
-                console.log("Attempting to create...");
-                createBucket(bucket);
-            });
+            viewDataClient.getBucketDetailsAsync(
+                bucket,
+                //onSuccess
+                function (bucketResponse) {
+                    console.log('Bucket details successful:');
+                    console.log(bucketResponse);
+                    uploadFiles(bucket, files);
+                },
+                //onError
+                function (error) {
+                    console.log("Bucket doesn't exist");
+                    console.log("Attempting to create...");
+                    createBucket(bucket);
+                });
 
-      });
+        });
 
-      // // Send the file:
-      // file.sendTo('upload.php');
+        // // Send the file:
+        // file.sendTo('upload.php');
     });
-    
+
 
 
     // React on successful iframe fallback upload (this is separate mechanism
     // from proper AJAX upload hence another handler):
     zone.event('iframeDone', function (xhr) {
-    alert('Done uploading via <iframe>, response:\n\n' + xhr.responseText);
+        alert('Done uploading via <iframe>, response:\n\n' + xhr.responseText);
     });
 
     // A bit of sugar - toggling multiple selection:
     fd.addEvent(fd.byID('multiple'), 'change', function (e) {
-    zone.multiple(e.currentTarget || e.srcElement.checked);
+        zone.multiple(e.currentTarget || e.srcElement.checked);
     });
 
-    
+
 });

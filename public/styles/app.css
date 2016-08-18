@@ -494,7 +494,7 @@ svg .nv-bar.clicked {
 .report-select-mask {
   font-size: 24px;
   font-weight: 100;
-  opacity: 0.5;
+
 }
 
 .report-select-mask:after{
@@ -514,6 +514,7 @@ svg .nv-bar.clicked {
   position: absolute;
   transform: translateX(-50%);
   cursor: pointer;
+  border: thin;
 }
 
 /* tweak viewer css */
